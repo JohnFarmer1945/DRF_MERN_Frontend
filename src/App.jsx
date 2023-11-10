@@ -1,13 +1,20 @@
-import { useState } from "react";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+import { Route, Routes } from "react-router-dom";
 
+import Home from "./assets/Home";
+import Features from "./assets/Features";
+import Pricing from "./assets/Pricing";
+
+function App() {
   return (
-    <>
-      <p>Hello there ...</p>
-    </>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/pricing" element={<Pricing />} />
+      </Routes>
+    </div>
   );
 }
 
