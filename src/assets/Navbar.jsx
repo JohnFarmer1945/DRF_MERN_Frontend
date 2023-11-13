@@ -1,8 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <nav className="navbar navbar-expand-sm navbar-light bg-light" id="sidebar">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -18,38 +20,17 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/"
-                style={({ isActive }) => ({
-                  background: isActive ? "red" : "",
-                  color: isActive ? "white" : "",
-                })}
-              >
+              <NavLink className="nav-link" to="/">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/features"
-                style={({ isActive }) => ({
-                  background: isActive ? "red" : "",
-                  color: isActive ? "white" : "",
-                })}
-              >
+              <NavLink className="nav-link" to="/features">
                 Features
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/pricing"
-                style={({ isActive }) => ({
-                  background: isActive ? "red" : "",
-                  color: isActive ? "white" : "",
-                })}
-              >
+              <NavLink className="nav-link" to="/pricing">
                 Pricing
               </NavLink>
             </li>
