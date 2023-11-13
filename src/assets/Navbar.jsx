@@ -4,7 +4,10 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light" id="sidebar">
+    <nav
+      className="navbar navbar-expand-sm navbar-light bg-white p-0"
+      id="sidebar"
+    >
       <div className="container-fluid">
         <button
           className="navbar-toggler"

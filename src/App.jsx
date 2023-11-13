@@ -6,10 +6,12 @@ import Navbar from "./assets/Navbar";
 import Home from "./assets/Home";
 import Features from "./assets/Features";
 import Pricing from "./assets/Pricing";
+import CarouselHeader from "./assets/CarouselHeader";
 
 function App() {
   return (
     <div className="App">
+      <CarouselHeader />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
