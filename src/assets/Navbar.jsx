@@ -1,12 +1,11 @@
+import { Link, NavLink } from "react-router-dom";
+
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Navbar
-        </a>
+    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <div className="container-fluid">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -14,24 +13,36 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <Link className="nav-link" to="/pricing">
                 Features
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <Link className="nav-link" to="/pricing">
                 Pricing
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                to="/"
+                style={({ isActive }) => ({
+                  background: isActive ? "red" : "black",
+                  color: isActive ? "white" : "black",
+                })}
+              >
+                Home
+              </NavLink>
             </li>
           </ul>
         </div>
