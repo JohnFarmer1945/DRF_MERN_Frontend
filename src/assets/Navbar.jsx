@@ -18,30 +18,39 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/pricing">
-                Features
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/pricing">
-                Pricing
-              </Link>
-            </li>
-            <li className="nav-item">
               <NavLink
                 className="nav-link"
                 to="/"
                 style={({ isActive }) => ({
-                  background: isActive ? "red" : "black",
-                  color: isActive ? "white" : "black",
+                  background: isActive ? "red" : "",
+                  color: isActive ? "white" : "",
                 })}
               >
                 Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                to="/features"
+                style={({ isActive }) => ({
+                  background: isActive ? "red" : "",
+                  color: isActive ? "white" : "",
+                })}
+              >
+                Features
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                to="/pricing"
+                style={({ isActive }) => ({
+                  background: isActive ? "red" : "",
+                  color: isActive ? "white" : "",
+                })}
+              >
+                Pricing
               </NavLink>
             </li>
           </ul>
