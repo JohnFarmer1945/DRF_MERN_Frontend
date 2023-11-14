@@ -10,15 +10,17 @@ import CarouselHeader from "./assets/CarouselHeader";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <CarouselHeader />
+
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
         <Route path="/pricing" element={<Pricing />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

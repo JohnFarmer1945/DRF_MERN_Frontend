@@ -1,4 +1,8 @@
 #sidebar a.active {
+  background-color: white;
+  color: red;
+}
+
+#sidebar {
   background-color: red;
-  color: white;
 }
