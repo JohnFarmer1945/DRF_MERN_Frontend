@@ -7,28 +7,7 @@ function CarouselHeader() {
         data-bs-ride="carousel"
         //data-bs-interval="10000"
       >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
+        <div className="carousel"></div>
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="./images/1log.png" className="d-block w-100" alt="..." />
@@ -41,7 +20,35 @@ function CarouselHeader() {
             />
           </div>
           <div className="carousel-item">
-            <img src="./images/1log.png" className="d-block w-100" alt="..." />
+            <img src="./images/3heli.png" className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="./images/4karte_s-h.png"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="./images/5heli_rtw.png"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="./images/6heliroof.png"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="./images/7heli_sun.png"
+              className="d-block w-100"
+              alt="..."
+            />
           </div>
         </div>
         <button
