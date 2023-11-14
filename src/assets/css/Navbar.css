@@ -12,3 +12,8 @@
   color: white;
   font-weight: bold;
 }
+
+.nav-link:hover {
+  background-color: white;
+  color: red;
+}
