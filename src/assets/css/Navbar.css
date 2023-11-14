@@ -5,4 +5,10 @@
 
 #sidebar {
   background-color: red;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  font-weight: bold;
 }
