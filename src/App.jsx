@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
 import CarouselHeader from "./assets/components/CarouselHeader";
+import ImageHeader from "./assets/components/ImageHeader";
 import Navbar from "./assets/components/Navbar";
 
 import Start from "./assets/components/Start";
@@ -17,10 +18,11 @@ import More from "./assets/components/More";
 function App() {
   return (
     <>
-      <CarouselHeader />
-
+      <Routes>
+        <Route path="/" element={<CarouselHeader />} />
+        <Route path="/*" element={<ImageHeader />} />
+      </Routes>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/Team" element={<Team />} />
