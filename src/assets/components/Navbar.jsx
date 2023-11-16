@@ -4,7 +4,7 @@ import "../css/Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-sm p-0" id="sidebar">
+    <nav className="navbar navbar-expand-md p-0" id="sidebar">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
