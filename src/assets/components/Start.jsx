@@ -1,8 +1,9 @@
 import DateTime from "./DateTime";
+import SunriseSunset from "./SunriseSunset";
 
 function Start() {
   return (
-    <div class="container-fluid border rounded text-center p-2">
+    <div className="container-fluid border rounded text-center p-2">
       <h1>
         <b>DRF Crewbriefing</b>
       </h1>
@@ -14,11 +15,7 @@ function Start() {
         <DateTime /> Uhr
       </h2>
       <h2>
-        Sonnenaufgang:
-        <span id="sunrise"></span>
-        Uhr | Sonnenuntergang:
-        <span id="sunset"></span>
-        Uhr
+        <SunriseSunset />
       </h2>
     </div>
   );
