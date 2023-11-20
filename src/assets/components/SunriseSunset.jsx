@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
-function SunriseSunset() {
+export default function SunriseSunset() {
   const [SunriseSunset, setSunriseSunset] = useState(null);
+
+  function checkDigitalFigures0Before(digitalNumber) {
+    if (digitalNumber < 10) {
+      digitalNumber = "0" + digitalNumber;
+    } // add zero in front of numbers < 10
+    return digitalNumber;
+  }
 
   useEffect(() => {
     fetch(
@@ -11,18 +18,15 @@ function SunriseSunset() {
         return res.json();
       })
       .then((data) => {
-        var d = new Date();
-
-        d = d.toString();
-
-        d = d.slice(30, 31);
-
-        d = parseFloat(d);
+        let dayLightSaving = parseFloat(new Date().toString().slice(30, 31));
 
         let sunrise = data["results"]["sunrise"];
+        let sunriseHour = parseFloat(sunrise[0]) + dayLightSaving;
+        sunriseHour = checkDigitalFigures0Before(sunriseHour);
+        sunrise = sunriseHour + sunrise.slice(1, 4);
+
         let sunset = data["results"]["sunset"];
 
-        sunrise = parseFloat(sunrise) + d + ":" + sunrise.slice(2, 4);
         sunset = parseFloat(sunset) + (12 + d) + ":" + sunset.slice(2, 4);
 
         let newSunriseSunset =
@@ -37,5 +41,3 @@ function SunriseSunset() {
 
   return <>{SunriseSunset}</>;
 }
-
-export default SunriseSunset;
