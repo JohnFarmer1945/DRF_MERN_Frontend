@@ -27,7 +27,8 @@ export default function SunriseSunset() {
 
         let sunset = data["results"]["sunset"];
 
-        sunset = parseFloat(sunset) + (12 + d) + ":" + sunset.slice(2, 4);
+        sunset =
+          parseFloat(sunset) + (12 + dayLightSaving) + ":" + sunset.slice(2, 4);
 
         let newSunriseSunset =
           "Sonnenaufgang: " +
