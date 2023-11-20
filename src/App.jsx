@@ -23,19 +23,21 @@ function App() {
         <Route path="/*" element={<ImageHeader />} />
       </Routes>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Start />} />
-        <Route path="/Team" element={<Team />} />
-        <Route path="/Technik" element={<Technik />} />
-        <Route path="/Umgebung" element={<Umgebung />} />
-        <Route path="/ToDos" element={<ToDos />} />
-        <Route path="/MoreToDos" element={<MoreToDos />} />
-        <Route
-          path="/EmergencyAndProcedure"
-          element={<EmergencyAndProcedure />}
-        />
-        <Route path="/More" element={<More />} />
-      </Routes>
+      <div class="container-fluid p-2">
+        <Routes>
+          <Route path="/" element={<Start />} />
+          <Route path="/Team" element={<Team />} />
+          <Route path="/Technik" element={<Technik />} />
+          <Route path="/Umgebung" element={<Umgebung />} />
+          <Route path="/ToDos" element={<ToDos />} />
+          <Route path="/MoreToDos" element={<MoreToDos />} />
+          <Route
+            path="/EmergencyAndProcedure"
+            element={<EmergencyAndProcedure />}
+          />
+          <Route path="/More" element={<More />} />
+        </Routes>
+      </div>
     </>
   );
 }
