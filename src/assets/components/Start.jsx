@@ -12,7 +12,7 @@ function Start() {
       </h1>
       <br />
       <h2>
-        <DateTime /> Uhr
+        <DateTime />
       </h2>
       <h2>
         <SunriseSunset />

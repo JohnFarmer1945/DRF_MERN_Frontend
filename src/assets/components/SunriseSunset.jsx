@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function SunriseSunset() {
   const [SunriseSunset, setSunriseSunset] = useState(null);
+  const [isPending, setIsPending] = useState("Loading ...");
 
   function checkDigitalFigures0Before(digitalNumber) {
     if (digitalNumber < 10) {
@@ -37,8 +38,14 @@ export default function SunriseSunset() {
           sunset +
           " Uhr";
         setSunriseSunset(newSunriseSunset);
+        setIsPending(false);
       });
   }, []);
 
-  return <>{SunriseSunset}</>;
+  return (
+    <>
+      {isPending && isPending}
+      {SunriseSunset && SunriseSunset}
+    </>
+  );
 }

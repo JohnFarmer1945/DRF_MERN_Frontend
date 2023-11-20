@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 function DateTime() {
   const [dateTime, setDateTime] = useState(null);
+  const [isPending, setIsPending] = useState("Loading ...");
 
   function checkDigitalFigures0Before(digitalNumber) {
     if (digitalNumber < 10) {
@@ -33,13 +34,19 @@ function DateTime() {
         ":" +
         seconds;
 
-      setDateTime(newDateTime);
+      setDateTime(newDateTime + " Uhr ");
+      setIsPending(false);
     }, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
 
-  return <>{dateTime}</>;
+  return (
+    <>
+      {isPending && isPending}
+      {dateTime && dateTime}
+    </>
+  );
 }
 
 export default DateTime;
