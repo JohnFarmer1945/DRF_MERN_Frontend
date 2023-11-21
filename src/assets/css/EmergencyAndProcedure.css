@@ -9,3 +9,10 @@
   color: black;
   border: solid 1px #e30613;
 }
+
+.btn:focus {
+  background-color: #e30613;
+  color: white;
+  border: #e30613;
+  outline: none;
+}
