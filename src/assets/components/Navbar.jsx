@@ -57,11 +57,6 @@ function Navbar() {
                 Emergency & Procedure
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/More">
-                More
-              </NavLink>
-            </li>
           </ul>
         </div>
       </div>

@@ -13,7 +13,6 @@ import Umgebung from "./assets/components/Umgebung";
 import ToDos from "./assets/components/ToDos";
 import MoreToDos from "./assets/components/MoreToDos";
 import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
-import More from "./assets/components/More";
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
             path="/EmergencyAndProcedure"
             element={<EmergencyAndProcedure />}
           />
-          <Route path="/More" element={<More />} />
         </Routes>
       </div>
     </>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function SunriseSunset() {
   const [SunriseSunset, setSunriseSunset] = useState(null);
   const [isPending, setIsPending] = useState("Loading ...");
+  const [error, setError] = useState(null);
 
   function checkDigitalFigures0Before(digitalNumber) {
     if (digitalNumber < 10) {
@@ -16,6 +17,10 @@ export default function SunriseSunset() {
       "https://api.sunrise-sunset.org/json?lat=54.216737&lng=9.599856&date=today"
     )
       .then((res) => {
+        if (!res.ok) {
+          throw Error("Could not fetch the data for that resource");
+        }
+
         return res.json();
       })
       .then((data) => {
@@ -39,11 +44,18 @@ export default function SunriseSunset() {
           " Uhr";
         setSunriseSunset(newSunriseSunset);
         setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(false);
+        setError(err.message);
+        console.log(err.message);
       });
   }, []);
 
   return (
     <>
+      {error && error}
       {isPending && isPending}
       {SunriseSunset && SunriseSunset}
     </>

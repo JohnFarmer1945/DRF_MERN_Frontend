@@ -165,12 +165,6 @@ function MoreToDos() {
 */
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2">
-        <h2>Anstehende Flüge</h2>
-        <h2>Compressor rinsing?</h2>
-      </div>
-      <br />
-
       <div className="container-fluid border rounded p-2">
         <h4>
           <u>{wochentagName} Tagschicht:</u>
@@ -221,6 +215,11 @@ function MoreToDos() {
             </div>
           </div>
         </div>
+      </div>
+      <br />
+      <div className="container-fluid border rounded text-center p-2">
+        <h2>Anstehende Flüge</h2>
+        <h2>Compressor rinsing?</h2>
       </div>
     </>
   );
