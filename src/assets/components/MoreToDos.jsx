@@ -169,22 +169,22 @@ function MoreToDos() {
         <h4>
           <u>{wochentagName} Tagschicht:</u>
         </h4>
-        <div class="d-flex flex-row justify-content-evenly m-3">
-          <div class="col-5">
-            <div class="card  p-2">
-              <div class="card-header">Flug</div>
-              <div class="card-body">
-                <h5 class="card-title">{tagSchichtFlug}</h5>
-                <p class="card-text"></p>
+        <div className="d-flex flex-row justify-content-evenly m-3">
+          <div className="col-5">
+            <div className="card  p-2">
+              <div className="card-header">Flug</div>
+              <div className="card-body">
+                <h5 className="card-title">{tagSchichtFlug}</h5>
+                <p className="card-text"></p>
               </div>
             </div>
           </div>
-          <div class="col-5">
-            <div class="card  p-2">
-              <div class="card-header">Medizin</div>
-              <div class="card-body">
-                <h5 class="card-title">{tagSchichtMedizin}</h5>
-                <p class="card-text"></p>
+          <div className="col-5">
+            <div className="card  p-2">
+              <div className="card-header">Medizin</div>
+              <div className="card-body">
+                <h5 className="card-title">{tagSchichtMedizin}</h5>
+                <p className="card-text"></p>
               </div>
             </div>
           </div>
@@ -195,22 +195,22 @@ function MoreToDos() {
         <h4>
           <u>{wochentagName} Nachtschicht:</u>
         </h4>
-        <div class="d-flex flex-row justify-content-evenly m-3">
-          <div class="col-5">
-            <div class="card  p-2">
-              <div class="card-header">Flug</div>
-              <div class="card-body">
-                <h5 class="card-title">{NachtSchichtFlug}</h5>
-                <p class="card-text"></p>
+        <div className="d-flex flex-row justify-content-evenly m-3">
+          <div className="col-5">
+            <div className="card  p-2">
+              <div className="card-header">Flug</div>
+              <div className="card-body">
+                <h5 className="card-title">{NachtSchichtFlug}</h5>
+                <p className="card-text"></p>
               </div>
             </div>
           </div>
-          <div class="col-5">
-            <div class="card  p-2">
-              <div class="card-header">Medizin</div>
-              <div class="card-body">
-                <h5 class="card-title">{NachtSchichtMedizin}</h5>
-                <p class="card-text"></p>
+          <div className="col-5">
+            <div className="card  p-2">
+              <div className="card-header">Medizin</div>
+              <div className="card-body">
+                <h5 className="card-title">{NachtSchichtMedizin}</h5>
+                <p className="card-text"></p>
               </div>
             </div>
           </div>
