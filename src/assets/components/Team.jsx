@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+// components
+import WhiteBoardDetails from "./WhiteBoardDetails";
+
 function Team() {
   const [whiteboard, setWhiteboard] = useState(null);
 
@@ -35,9 +38,10 @@ function Team() {
         <div>
           {whiteboard &&
             whiteboard.map((singleWhiteBoardEntry) => (
-              <p key={singleWhiteBoardEntry._id}>
-                {singleWhiteBoardEntry.title}
-              </p>
+              <WhiteBoardDetails
+                key={singleWhiteBoardEntry._id}
+                whiteboard={singleWhiteBoardEntry}
+              />
             ))}
         </div>
       </div>
