@@ -33,16 +33,18 @@ function Team() {
       <br />
       <div className="container-fluid border rounded text-center p-2">
         <h2 className="fw-bold text-decoration-underline">
-          <b>Aktuelles:</b>
+          <b>Aktuelles Station Rendsburg:</b>
         </h2>
-        <div>
-          {whiteboard &&
-            whiteboard.map((singleWhiteBoardEntry) => (
-              <WhiteBoardDetails
-                key={singleWhiteBoardEntry._id}
-                whiteboard={singleWhiteBoardEntry}
-              />
-            ))}
+        <div className="container-fluid">
+          <div className="row justify-content-center">
+            {whiteboard &&
+              whiteboard.map((singleWhiteBoardEntry) => (
+                <WhiteBoardDetails
+                  key={singleWhiteBoardEntry._id}
+                  whiteboard={singleWhiteBoardEntry}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </>

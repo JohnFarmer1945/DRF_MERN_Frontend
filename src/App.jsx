@@ -13,6 +13,7 @@ import Umgebung from "./assets/components/Umgebung";
 import ToDos from "./assets/components/ToDos";
 import MoreToDos from "./assets/components/MoreToDos";
 import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
+import Adminpage from "./assets/components/Adminpage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             path="/EmergencyAndProcedure"
             element={<EmergencyAndProcedure />}
           />
+          <Route exact path="/Adminpage" element={<Adminpage />} />
         </Routes>
       </div>
     </>
