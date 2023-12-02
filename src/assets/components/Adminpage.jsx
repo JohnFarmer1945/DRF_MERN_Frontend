@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 
 import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
 
+// Get Whiteboard Data:
 function Adminpage() {
   const [whiteboardData, setWhiteboardData] = useState(null);
   const [newTitle, setNewTitle] = useState("new Title");
   const [newDescription, setNewDescription] = useState("new Description");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWhiteboardData = async () => {
@@ -18,7 +20,35 @@ function Adminpage() {
     };
 
     fetchWhiteboardData();
-  }, []);
+  }, [newTitle]);
+
+  // Create Entry Fetch
+  const handleAdd = async () => {
+    console.log("handleAdd clicked");
+
+    const newEntry = {
+      title: newTitle,
+      description: newDescription,
+    };
+
+    const response = await fetch("/api/whiteboard", {
+      method: "POST",
+      body: JSON.stringify(newEntry),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const json = await response.json();
+    console.log(json);
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setError(null);
+      console.log("new workout added", json);
+    }
+  };
 
   return (
     <div className="container-fluid border rounded text-center p-2">
@@ -73,7 +103,7 @@ function Adminpage() {
               ></input>
             </td>
             <td>
-              <i class="bi bi-plus-square"></i>
+              <i class="bi bi-plus-square" onClick={handleAdd}></i>
             </td>
             <td></td>
           </tr>

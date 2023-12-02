@@ -14,9 +14,10 @@ function DateTime() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       let myDate = new Date();
-
+      console.log(myDate);
       let day = myDate.getDate();
-      let month = myDate.getMonth();
+      let month = myDate.getMonth() + 1;
+
       let year = myDate.getFullYear();
       let hours = checkDigitalFigures0Before(myDate.getHours());
       let minutes = checkDigitalFigures0Before(myDate.getMinutes());
