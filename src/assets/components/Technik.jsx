@@ -1,5 +1,3 @@
-import WhiteBoardCRUD from "./WhiteBoardCRUD";
-
 function Technik() {
   return (
     <>
