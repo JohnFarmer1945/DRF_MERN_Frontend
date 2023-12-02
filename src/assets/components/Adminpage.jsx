@@ -4,6 +4,8 @@ import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
 
 function Adminpage() {
   const [whiteboardData, setWhiteboardData] = useState(null);
+  const [newTitle, setNewTitle] = useState("new Title");
+  const [newDescription, setNewDescription] = useState("new Description");
 
   useEffect(() => {
     const fetchWhiteboardData = async () => {
@@ -20,12 +22,14 @@ function Adminpage() {
 
   return (
     <div className="container-fluid border rounded text-center p-2">
-      <table className="table table-striped table-sm">
-        <thead>
+      <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
+        <thead className="text-start text-decoration-underline">
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Name:</th>
+            <th>Description:</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -38,8 +42,41 @@ function Adminpage() {
               />
             ))}
         </tbody>
+        <thead className="text-start text-decoration-underline">
+          <tr>
+            <th></th>
+            <th>Add new Entry:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
         <tfoot>
-          <tr></tr>
+          <tr>
+            <td></td>
+            <td>
+              <input
+                type="text"
+                size="12"
+                maxLength="12"
+                onChange={(e) => setNewTitle(e.target.value)}
+                value={newTitle}
+              ></input>
+            </td>
+            <td>
+              <input
+                type="text"
+                size="40"
+                maxLength="40"
+                onChange={(e) => setNewDescription(e.target.value)}
+                value={newDescription}
+              ></input>
+            </td>
+            <td>
+              <i class="bi bi-plus-square"></i>
+            </td>
+            <td></td>
+          </tr>
         </tfoot>
       </table>
     </div>
