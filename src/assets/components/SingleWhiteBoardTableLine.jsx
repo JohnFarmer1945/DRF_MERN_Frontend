@@ -8,6 +8,10 @@ const SingleWhiteBoardTableLine = ({ index, whiteboard }) => {
     console.log(whiteboard._id);
   };
 
+  const handleDelete = async () => {
+    console.log(whiteboard._id);
+  };
+
   return (
     <tr>
       <td className="fw-bold">{index}</td>
@@ -33,7 +37,7 @@ const SingleWhiteBoardTableLine = ({ index, whiteboard }) => {
         <i className="bi bi-pencil" onClick={handleEdit}></i>
       </td>
       <td>
-        <i className="bi bi-trash"></i>
+        <i className="bi bi-trash" onClick={handleDelete}></i>
       </td>
     </tr>
   );

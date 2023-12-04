@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 
 import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
 
-// Get Whiteboard Data:
 function Adminpage() {
   const [whiteboardData, setWhiteboardData] = useState(null);
   const [newTitle, setNewTitle] = useState("new Title");
   const [newDescription, setNewDescription] = useState("new Description");
   const [error, setError] = useState(null);
+  const [postSend, setPostSend] = useState(false);
 
+  // Get Whiteboard Data:
   useEffect(() => {
     const fetchWhiteboardData = async () => {
       const response = await fetch("/api/whiteboard");
@@ -20,7 +21,8 @@ function Adminpage() {
     };
 
     fetchWhiteboardData();
-  }, [newTitle]);
+    setPostSend(false);
+  }, [postSend]);
 
   // Create Entry Fetch
   const handleAdd = async () => {
@@ -48,6 +50,7 @@ function Adminpage() {
       setError(null);
       console.log("new workout added", json);
     }
+    setPostSend(true);
   };
 
   return (
