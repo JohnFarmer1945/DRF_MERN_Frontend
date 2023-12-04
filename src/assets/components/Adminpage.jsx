@@ -75,6 +75,12 @@ function Adminpage() {
     setPostSend(true);
   };
 
+  // Update Entry
+
+  const handleUpdateDataFromChild = async (updateData) => {
+    console.log(updateData);
+  };
+
   return (
     <div className="container-fluid border rounded text-center p-2">
       <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
@@ -95,6 +101,7 @@ function Adminpage() {
                 key={singleWhiteBoardEntry._id}
                 whiteboard={singleWhiteBoardEntry}
                 onDataFromChild={handleDataFromChild}
+                handleUpdateDataFromChild={handleUpdateDataFromChild}
               />
             ))}
         </tbody>
