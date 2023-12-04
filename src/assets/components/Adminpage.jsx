@@ -55,10 +55,24 @@ function Adminpage() {
 
   // Delete Entry
   const [dataFromChild, setDataFromChild] = useState("");
-  const handleDataFromChild = (data) => {
+
+  const handleDataFromChild = async (data) => {
     console.log(data);
-    //setDataFromChild(data);
-    //console.log(dataFromChild);
+
+    const response = await fetch("/api/whiteboard/" + data, {
+      method: "DELETE",
+    });
+
+    const json = await response.json();
+    console.log(json);
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setError(null);
+      console.log("Entry deleted", json);
+    }
+    setPostSend(true);
   };
 
   return (
