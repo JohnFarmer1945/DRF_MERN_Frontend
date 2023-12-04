@@ -78,7 +78,33 @@ function Adminpage() {
   // Update Entry
 
   const handleUpdateDataFromChild = async (updateData) => {
-    console.log(updateData);
+    let title = updateData[1];
+    let description = updateData[2];
+
+    const entryToUpdate = {
+      title: title,
+      description: description,
+    };
+    console.log(JSON.stringify(entryToUpdate));
+
+    const response = await fetch("/api/whiteboard/" + updateData[0], {
+      method: "PATCH",
+      body: JSON.stringify(entryToUpdate),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const json = await response.json();
+    console.log(json);
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setError(null);
+      console.log("Entry updated!", json);
+    }
+    setPostSend(true);
   };
 
   return (

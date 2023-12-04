@@ -18,7 +18,7 @@ const SingleWhiteBoardTableLine = ({
   // Update Data
 
   const sendUpdateDataToParent = () => {
-    const dataToBeUpdated = [title, description];
+    const dataToBeUpdated = [whiteboard._id, title, description];
     handleUpdateDataFromChild(dataToBeUpdated);
   };
 
