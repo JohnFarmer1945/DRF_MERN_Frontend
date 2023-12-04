@@ -53,6 +53,14 @@ function Adminpage() {
     setPostSend(true);
   };
 
+  // Delete Entry
+  const [dataFromChild, setDataFromChild] = useState("");
+  const handleDataFromChild = (data) => {
+    console.log(data);
+    //setDataFromChild(data);
+    //console.log(dataFromChild);
+  };
+
   return (
     <div className="container-fluid border rounded text-center p-2">
       <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
@@ -72,6 +80,7 @@ function Adminpage() {
                 index={index + 1}
                 key={singleWhiteBoardEntry._id}
                 whiteboard={singleWhiteBoardEntry}
+                onDataFromChild={handleDataFromChild}
               />
             ))}
         </tbody>
@@ -106,7 +115,7 @@ function Adminpage() {
               ></input>
             </td>
             <td>
-              <i class="bi bi-plus-square" onClick={handleAdd}></i>
+              <i className="bi bi-plus-square" onClick={handleAdd}></i>
             </td>
             <td></td>
           </tr>

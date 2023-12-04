@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 
-const SingleWhiteBoardTableLine = ({ index, whiteboard }) => {
+const SingleWhiteBoardTableLine = ({ index, whiteboard, onDataFromChild }) => {
   const [title, setTitle] = useState(whiteboard.title);
   const [description, setDescription] = useState(whiteboard.description);
+  const [inputValue, setInputValue] = useState(whiteboard._id);
 
-  const handleEdit = async () => {
-    console.log(whiteboard._id);
-  };
-
-  const handleDelete = async () => {
-    console.log(whiteboard._id);
+  const sendDataToParent = () => {
+    //setInputValue(whiteboard._id);
+    onDataFromChild(inputValue);
   };
 
   return (
@@ -34,10 +32,10 @@ const SingleWhiteBoardTableLine = ({ index, whiteboard }) => {
         ></input>
       </td>
       <td>
-        <i className="bi bi-pencil" onClick={handleEdit}></i>
+        <i className="bi bi-pencil"></i>
       </td>
       <td>
-        <i className="bi bi-trash" onClick={handleDelete}></i>
+        <i className="bi bi-trash" onClick={sendDataToParent}></i>
       </td>
     </tr>
   );
