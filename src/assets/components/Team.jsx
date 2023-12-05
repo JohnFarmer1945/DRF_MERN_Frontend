@@ -8,9 +8,7 @@ function Team() {
 
   useEffect(() => {
     const fetchWhiteboard = async () => {
-      const response = await fetch(
-        "https://drf-backend.onrender.com/api/whiteboard"
-      );
+      const response = await fetch("api/whiteboard");
       const json = await response.json();
 
       if (response.ok) {
