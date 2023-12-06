@@ -2,15 +2,22 @@ import { useEffect, useState } from "react";
 
 import "../css/general.css";
 
-// components
 import WhiteBoardDetails from "./WhiteBoardDetails";
+
+let myURL = "";
+if (import.meta.env.DEV === true) {
+  myURL = "api/whiteboard";
+} else if (import.meta.env.PROD === true) {
+  myURL = "https://drf-backend.onrender.com/api/whiteboard";
+}
 
 function Team() {
   const [whiteboard, setWhiteboard] = useState(null);
 
   useEffect(() => {
     const fetchWhiteboard = async () => {
-      const response = await fetch("api/whiteboard");
+      const response = await fetch(myURL);
+
       const json = await response.json();
 
       if (response.ok) {

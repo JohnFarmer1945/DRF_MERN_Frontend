@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 
 import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
 
+let myURL = "";
+if (import.meta.env.DEV === true) {
+  myURL = "api/whiteboard/";
+} else if (import.meta.env.PROD === true) {
+  myURL = "https://drf-backend.onrender.com/api/whiteboard/";
+}
+
 function Adminpage() {
   const [whiteboardData, setWhiteboardData] = useState(null);
   const [newTitle, setNewTitle] = useState("new Title");
@@ -12,7 +19,7 @@ function Adminpage() {
   // Get Whiteboard Data:
   useEffect(() => {
     const fetchWhiteboardData = async () => {
-      const response = await fetch("/api/whiteboard");
+      const response = await fetch(myURL);
       const json = await response.json();
 
       if (response.ok) {
@@ -33,7 +40,7 @@ function Adminpage() {
       description: newDescription,
     };
 
-    const response = await fetch("/api/whiteboard", {
+    const response = await fetch(myURL, {
       method: "POST",
       body: JSON.stringify(newEntry),
       headers: {
@@ -59,7 +66,7 @@ function Adminpage() {
   const handleDataFromChild = async (data) => {
     console.log(data);
 
-    const response = await fetch("/api/whiteboard/" + data, {
+    const response = await fetch(myURL + data, {
       method: "DELETE",
     });
 
@@ -87,7 +94,7 @@ function Adminpage() {
     };
     console.log(JSON.stringify(entryToUpdate));
 
-    const response = await fetch("/api/whiteboard/" + updateData[0], {
+    const response = await fetch(myURL + updateData[0], {
       method: "PATCH",
       body: JSON.stringify(entryToUpdate),
       headers: {
