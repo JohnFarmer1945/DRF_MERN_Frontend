@@ -14,7 +14,7 @@ function DateTime() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       let myDate = new Date();
-      console.log(myDate);
+
       let day = myDate.getDate();
       let month = myDate.getMonth() + 1;
 

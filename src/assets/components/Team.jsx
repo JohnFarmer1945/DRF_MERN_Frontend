@@ -23,11 +23,11 @@ function Team() {
 
   return (
     <>
-      <div class="card shadow">
-        <div class="card-header bg-light">
-          <h3 class="text-decoration-underline">Team</h3>
+      <div className="card shadow">
+        <div className="card-header bg-light">
+          <h3 className="text-decoration-underline">Team</h3>
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <h3>Mitflieger / Hospitationen / Einweisung</h3>
           <h3>N&S Aktualität</h3>
           <h3>Persönliche Tagesperformance</h3>
@@ -35,13 +35,13 @@ function Team() {
       </div>
       <br />
 
-      <div class="card shadow">
-        <div class="card-header bg-light fw-bold ">
-          <h3 class="text-decoration-underline">
+      <div className="card shadow">
+        <div className="card-header bg-light fw-bold ">
+          <h3 className="text-decoration-underline">
             Aktuelles Station Rendsburg:
           </h3>
         </div>
-        <div class="card-body ">
+        <div className="card-body ">
           <div className="container-fluid">
             <div className="row justify-content-center">
               {whiteboard &&
