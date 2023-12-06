@@ -14,6 +14,7 @@ import ToDos from "./assets/components/ToDos";
 import MoreToDos from "./assets/components/MoreToDos";
 import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
 import Adminpage from "./assets/components/Adminpage";
+import Footer from "./assets/components/Footer";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/Adminpage" element={<Adminpage />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }

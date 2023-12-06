@@ -1,0 +1,21 @@
+.myButton {
+  background-color: white;
+  color: black;
+}
+
+.myButton:hoover {
+  background-color: white;
+  color: #e30613;
+}
+
+/*
+.nav-link {
+  color: black;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: #e30613;
+}
+*/
