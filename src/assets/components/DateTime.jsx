@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function DateTime() {
   const [dateTime, setDateTime] = useState(null);
-  const [isPending, setIsPending] = useState("Loading ...");
+  const [isPending, setIsPending] = useState("Loading date and time ...");
 
   function checkDigitalFigures0Before(digitalNumber) {
     if (digitalNumber < 10) {

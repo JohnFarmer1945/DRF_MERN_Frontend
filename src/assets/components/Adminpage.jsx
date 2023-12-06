@@ -15,7 +15,9 @@ function Adminpage() {
   const [newDescription, setNewDescription] = useState("new Description");
   const [error, setError] = useState(null);
   const [postSend, setPostSend] = useState(false);
-  const [whiteboardIsPending, setWhiteboardIsPending] = useState("Loading ...");
+  const [whiteboardIsPending, setWhiteboardIsPending] = useState(
+    "Loading whiteboard..."
+  );
 
   // Get Whiteboard Data:
   useEffect(() => {
