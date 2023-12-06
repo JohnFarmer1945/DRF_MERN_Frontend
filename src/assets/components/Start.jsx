@@ -3,7 +3,7 @@ import SunriseSunset from "./SunriseSunset";
 
 function Start() {
   return (
-    <div className="container-fluid border rounded text-center p-2">
+    <div className="container-fluid border rounded shadow text-center p-2">
       <h1>
         <b>DRF Crewbriefing</b>
       </h1>

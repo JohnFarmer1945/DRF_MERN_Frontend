@@ -154,10 +154,10 @@ function EmergencyAndProcedure() {
 
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <div className="d-flex flex-row justify-content-evenly m-3">
           <div className="col-8">
-            <div className="card">
+            <div className="card shadow">
               <div className="card-header">Flugbetriebliches Notverfahren</div>
               <div className="card-body">
                 <h5 className="card-title">{flightQuestion}</h5>
@@ -171,10 +171,10 @@ function EmergencyAndProcedure() {
         </div>
       </div>
       <br />
-      <div className="container-fluid border rounded text-center p-2">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <div className="d-flex flex-row justify-content-evenly m-3">
           <div className="col-8">
-            <div className="card">
+            <div className="card shadow">
               <div className="card-header">Medizinisches Verfahren</div>
               <div className="card-body">
                 <h5 className="card-title">{medQuestion}</h5>

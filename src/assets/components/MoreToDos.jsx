@@ -165,13 +165,13 @@ function MoreToDos() {
 */
   return (
     <>
-      <div className="container-fluid border rounded p-2">
+      <div className="container-fluid border rounded p-2 shadow">
         <h4>
           <u>{wochentagName} Tagschicht:</u>
         </h4>
         <div className="d-flex flex-row justify-content-evenly m-3">
           <div className="col-5">
-            <div className="card  p-2">
+            <div className="card shadow p-2">
               <div className="card-header">Flug</div>
               <div className="card-body">
                 <h5 className="card-title">{tagSchichtFlug}</h5>
@@ -180,7 +180,7 @@ function MoreToDos() {
             </div>
           </div>
           <div className="col-5">
-            <div className="card  p-2">
+            <div className="card shadow  p-2">
               <div className="card-header">Medizin</div>
               <div className="card-body">
                 <h5 className="card-title">{tagSchichtMedizin}</h5>
@@ -191,13 +191,13 @@ function MoreToDos() {
         </div>
       </div>
       <br />
-      <div className="container-fluid border rounded text-center p-2">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <h4>
           <u>{wochentagName} Nachtschicht:</u>
         </h4>
         <div className="d-flex flex-row justify-content-evenly m-3">
           <div className="col-5">
-            <div className="card  p-2">
+            <div className="card shadow p-2">
               <div className="card-header">Flug</div>
               <div className="card-body">
                 <h5 className="card-title">{NachtSchichtFlug}</h5>
@@ -206,7 +206,7 @@ function MoreToDos() {
             </div>
           </div>
           <div className="col-5">
-            <div className="card  p-2">
+            <div className="card shadow p-2">
               <div className="card-header">Medizin</div>
               <div className="card-body">
                 <h5 className="card-title">{NachtSchichtMedizin}</h5>
@@ -217,7 +217,7 @@ function MoreToDos() {
         </div>
       </div>
       <br />
-      <div className="container-fluid border rounded text-center p-2">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <h2>Anstehende Flüge</h2>
         <h2>Compressor rinsing?</h2>
       </div>

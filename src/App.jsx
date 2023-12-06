@@ -23,7 +23,7 @@ function App() {
         <Route path="/*" element={<ImageHeader />} />
       </Routes>
       <Navbar />
-      <div className="container-fluid p-2 p-3 text-center">
+      <div className="container-fluid p-3 text-center">
         <Routes>
           <Route exact path="/" element={<Start />} />
           <Route exact path="/Team" element={<Team />} />

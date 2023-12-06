@@ -4,7 +4,7 @@ import SunriseSunset from "./SunriseSunset";
 function Umgebung() {
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <h2>
           <b>
             <DateTime />
@@ -17,7 +17,7 @@ function Umgebung() {
         </h2>
       </div>
       <br />
-      <div className="container-fluid border rounded text-center p-2">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <h2>
           <a
             target="_blank"
