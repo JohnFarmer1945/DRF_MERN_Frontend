@@ -4,6 +4,7 @@ import "../css/general.css";
 
 import WhiteBoardDetails from "./WhiteBoardDetails";
 
+// PRODUCTION DEVELOPMENT SWITCH FOR APIs
 let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "api/whiteboard";
