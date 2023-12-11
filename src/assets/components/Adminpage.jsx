@@ -120,67 +120,71 @@ function Adminpage() {
 
   return (
     <>
-      {whiteboardIsPending && whiteboardIsPending}
-      <div className="container-fluid border rounded text-center p-2">
-        <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
-          <thead className="text-start text-decoration-underline">
-            <tr>
-              <th>#</th>
-              <th>Name:</th>
-              <th>Description:</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {whiteboardData &&
-              whiteboardData.map((singleWhiteBoardEntry, index) => (
-                <SingleWhiteBoardTableLine
-                  index={index + 1}
-                  key={singleWhiteBoardEntry._id}
-                  whiteboard={singleWhiteBoardEntry}
-                  onDataFromChild={handleDataFromChild}
-                  handleUpdateDataFromChild={handleUpdateDataFromChild}
-                />
-              ))}
-          </tbody>
-          <thead className="text-start text-decoration-underline">
-            <tr>
-              <th></th>
-              <th>Add new Entry:</th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <td></td>
-              <td>
-                <input
-                  type="text"
-                  size="12"
-                  maxLength="12"
-                  onChange={(e) => setNewTitle(e.target.value)}
-                  value={newTitle}
-                ></input>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  size="40"
-                  maxLength="40"
-                  onChange={(e) => setNewDescription(e.target.value)}
-                  value={newDescription}
-                ></input>
-              </td>
-              <td>
-                <i className="bi bi-plus-square" onClick={handleAdd}></i>
-              </td>
-              <td></td>
-            </tr>
-          </tfoot>
-        </table>
+      <div className="card shadow">
+        <div className="card-header bg-light text-start">
+          <h3 className="text-decoration-underline">White-Board:</h3>
+        </div>
+        <div className="card-body">
+          <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
+            <thead className="text-start text-decoration-underline">
+              <tr>
+                <th>#</th>
+                <th>Name:</th>
+                <th>Description:</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {whiteboardData &&
+                whiteboardData.map((singleWhiteBoardEntry, index) => (
+                  <SingleWhiteBoardTableLine
+                    index={index + 1}
+                    key={singleWhiteBoardEntry._id}
+                    whiteboard={singleWhiteBoardEntry}
+                    onDataFromChild={handleDataFromChild}
+                    handleUpdateDataFromChild={handleUpdateDataFromChild}
+                  />
+                ))}
+            </tbody>
+            <thead className="text-start text-decoration-underline">
+              <tr>
+                <th></th>
+                <th>Add new Entry:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td>
+                  <input
+                    type="text"
+                    size="12"
+                    maxLength="12"
+                    onChange={(e) => setNewTitle(e.target.value)}
+                    value={newTitle}
+                  ></input>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    size="40"
+                    maxLength="40"
+                    onChange={(e) => setNewDescription(e.target.value)}
+                    value={newDescription}
+                  ></input>
+                </td>
+                <td>
+                  <i className="bi bi-plus-square" onClick={handleAdd}></i>
+                </td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     </>
   );
