@@ -8,6 +8,8 @@ import {
   Routes,
 } from "react-router-dom";
 
+import RootLayout from "./assets/layouts/RootLayout";
+
 import CarouselHeader from "./assets/components/CarouselHeader";
 import ImageHeader from "./assets/components/ImageHeader";
 import Navbar from "./assets/components/Navbar";
@@ -24,7 +26,7 @@ import Footer from "./assets/components/Footer";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
+    <Route path="/" element={<RootLayout />}>
       <Route exact path="/" element={<Start />} />
       <Route exact path="/Team" element={<Team />} />
       <Route exact path="/Technik" element={<Technik />} />

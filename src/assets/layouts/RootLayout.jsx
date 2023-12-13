@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 export default function RootLayout() {
   return (
     <>
+      <p>He who walks behind</p>
       <Navbar />
       <Outlet />
     </>
