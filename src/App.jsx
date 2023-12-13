@@ -1,6 +1,12 @@
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 
 import CarouselHeader from "./assets/components/CarouselHeader";
 import ImageHeader from "./assets/components/ImageHeader";
@@ -16,31 +22,36 @@ import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
 import Adminpage from "./assets/components/Adminpage";
 import Footer from "./assets/components/Footer";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route exact path="/" element={<Start />} />
+      <Route exact path="/Team" element={<Team />} />
+      <Route exact path="/Technik" element={<Technik />} />
+      <Route exact path="/Umgebung" element={<Umgebung />} />
+      <Route exact path="/ToDos" element={<ToDos />} />
+      <Route exact path="/MoreToDos" element={<MoreToDos />} />
+      <Route
+        exact
+        path="/EmergencyAndProcedure"
+        element={<EmergencyAndProcedure />}
+      />
+      <Route exact path="/Adminpage" element={<Adminpage />} />
+    </Route>
+  )
+);
+
 function App() {
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route exact path="/" element={<CarouselHeader />} />
         <Route path="/*" element={<ImageHeader />} />
       </Routes>
       <Navbar />
-      <div className="container-fluid p-3 text-center">
-        <Routes>
-          <Route exact path="/" element={<Start />} />
-          <Route exact path="/Team" element={<Team />} />
-          <Route exact path="/Technik" element={<Technik />} />
-          <Route exact path="/Umgebung" element={<Umgebung />} />
-          <Route exact path="/ToDos" element={<ToDos />} />
-          <Route exact path="/MoreToDos" element={<MoreToDos />} />
-          <Route
-            exact
-            path="/EmergencyAndProcedure"
-            element={<EmergencyAndProcedure />}
-          />
-          <Route exact path="/Adminpage" element={<Adminpage />} />
-        </Routes>
-      </div>
-      <Footer />
+      <div className="container-fluid p-3 text-center"></div>
+      <Footer /> */}
+      <RouterProvider router={router} />
     </>
   );
 }
