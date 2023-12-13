@@ -32,7 +32,7 @@ function Team() {
   return (
     <>
       <div className="card shadow">
-        <div className="card-header bg-light">
+        <div className="card-header p- bg-light ">
           <h3 className="text-decoration-underline">Team</h3>
         </div>
         <div className="card-body">
