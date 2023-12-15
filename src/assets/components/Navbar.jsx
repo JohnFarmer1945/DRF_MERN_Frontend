@@ -28,32 +28,32 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Team">
+              <NavLink className="nav-link" to="/pages/Team">
                 Team
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Technik">
+              <NavLink className="nav-link" to="/pages/Technik">
                 Technik
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Umgebung">
+              <NavLink className="nav-link" to="/pages/Umgebung">
                 Umgebung
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/ToDos">
+              <NavLink className="nav-link" to="/pages/ToDos">
                 ToDos
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/MoreToDos">
+              <NavLink className="nav-link" to="/pages/MoreToDos">
                 MoreToDos
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/EmergencyAndProcedure">
+              <NavLink className="nav-link" to="/pages/EmergencyAndProcedure">
                 Emergency & Procedure
               </NavLink>
             </li>

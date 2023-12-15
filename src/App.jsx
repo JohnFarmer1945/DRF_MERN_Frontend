@@ -9,9 +9,10 @@ import {
 } from "react-router-dom";
 
 // Layouts
-import RootLayout from "./assets/layouts/RootLayout";
+import RootLayout from "./assets/layouts/StartLayout";
 import AdminLayout from "./assets/layouts/AdminLayout";
-import CarouselHeader from "./assets/components/CarouselHeader";
+import StartLayout from "./assets/layouts/StartLayout";
+import PageLayout from "./assets/layouts/PageLayout";
 
 //Components
 import ImageHeader from "./assets/components/ImageHeader";
@@ -25,25 +26,82 @@ import MoreToDos from "./assets/components/MoreToDos";
 import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
 import Adminpage from "./assets/components/Adminpage";
 import Footer from "./assets/components/Footer";
+import CarouselHeader from "./assets/components/CarouselHeader";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route exact path="/" element={<Start />} />
-      <Route exact path="Team" element={<Team />} />
-      <Route exact path="Technik" element={<Technik />} />
-      <Route exact path="Umgebung" element={<Umgebung />} />
-      <Route exact path="ToDos" element={<ToDos />} />
-      <Route exact path="MoreToDos" element={<MoreToDos />} />
-      <Route
-        exact
-        path="EmergencyAndProcedure"
-        element={<EmergencyAndProcedure />}
-      />
-      <Route exact path="Adminpage" element={<AdminLayout />} />
-    </Route>
-  )
-);
+const router = createBrowserRouter([
+  // Start Route Index Route
+  {
+    path: "/",
+    element: <StartLayout />,
+    children: [
+      {
+        path: "",
+        element: <Start />,
+      },
+    ],
+  },
+  // page Routes
+  {
+    path: "/pages",
+    element: <PageLayout />,
+    children: [
+      {
+        path: "team",
+        element: <Team />,
+      },
+      {
+        path: "technik",
+        element: <Technik />,
+      },
+      {
+        path: "umgebung",
+        element: <Umgebung />,
+      },
+      {
+        path: "todos",
+        element: <ToDos />,
+      },
+      {
+        path: "moretodos",
+        element: <MoreToDos />,
+      },
+      {
+        path: "EmergencyAndProcedure",
+        element: <EmergencyAndProcedure />,
+      },
+    ],
+  },
+  {
+    path: "/adminpage",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "",
+        element: <Adminpage />,
+      },
+    ],
+  },
+]);
+
+// const routerPages = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path="/pages" element={<PageLayout />}>
+//       <Route exact path="Team" element={<Team />} />
+//       <Route exact path="Technik" element={<Technik />} />
+//       <Route exact path="Umgebung" element={<Umgebung />} />
+//       <Route exact path="ToDos" element={<ToDos />} />
+//       <Route exact path="MoreToDos" element={<MoreToDos />} />
+//       <Route
+//         exact
+//         path="EmergencyAndProcedure"
+//         element={<EmergencyAndProcedure />}
+//       />
+//     </Route>
+//   )
+// );
+
+//   />
+//   <Route exact path="Adminpage" element={<AdminLayout />} />
 
 function App() {
   return (
