@@ -8,12 +8,14 @@ import {
   Routes,
 } from "react-router-dom";
 
+// Layouts
 import RootLayout from "./assets/layouts/RootLayout";
-
+import AdminLayout from "./assets/layouts/AdminLayout";
 import CarouselHeader from "./assets/components/CarouselHeader";
+
+//Components
 import ImageHeader from "./assets/components/ImageHeader";
 import Navbar from "./assets/components/Navbar";
-
 import Start from "./assets/components/Start";
 import Team from "./assets/components/Team";
 import Technik from "./assets/components/Technik";
@@ -28,17 +30,17 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route exact path="/" element={<Start />} />
-      <Route exact path="/Team" element={<Team />} />
-      <Route exact path="/Technik" element={<Technik />} />
-      <Route exact path="/Umgebung" element={<Umgebung />} />
-      <Route exact path="/ToDos" element={<ToDos />} />
-      <Route exact path="/MoreToDos" element={<MoreToDos />} />
+      <Route exact path="Team" element={<Team />} />
+      <Route exact path="Technik" element={<Technik />} />
+      <Route exact path="Umgebung" element={<Umgebung />} />
+      <Route exact path="ToDos" element={<ToDos />} />
+      <Route exact path="MoreToDos" element={<MoreToDos />} />
       <Route
         exact
-        path="/EmergencyAndProcedure"
+        path="EmergencyAndProcedure"
         element={<EmergencyAndProcedure />}
       />
-      <Route exact path="/Adminpage" element={<Adminpage />} />
+      <Route exact path="Adminpage" element={<AdminLayout />} />
     </Route>
   )
 );
