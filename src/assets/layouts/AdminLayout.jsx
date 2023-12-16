@@ -16,14 +16,11 @@ export default function RootLayout() {
   return (
     <>
       <ImageHeader />
-      <Navbar />
-      <ImageHeader />
+
       <NavbarAdmin />
-      <p>Net ninja rouoter in depth breadcrumbs</p>
-      <nav>
-        <NavLink to="faq">View the FAQ</NavLink>
-        <NavLink to="contact">Contact us</NavLink>
-      </nav>
+
+      <h3 className="m-3 align-context-center">Adminpage:</h3>
+
       <Outlet />
     </>
   );

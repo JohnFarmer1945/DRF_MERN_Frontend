@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import "../css/CarouselHeader.css";
-
 function CarouselHeader() {
   return (
     <div className="d-none d-sm-block">

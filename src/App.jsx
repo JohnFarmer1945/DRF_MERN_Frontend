@@ -27,61 +27,7 @@ import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
 import Adminpage from "./assets/components/Adminpage";
 import Footer from "./assets/components/Footer";
 import CarouselHeader from "./assets/components/CarouselHeader";
-
-const router = createBrowserRouter([
-  // Start Route Index Route
-  {
-    path: "/",
-    element: <StartLayout />,
-    children: [
-      {
-        path: "",
-        element: <Start />,
-      },
-    ],
-  },
-  // page Routes
-  {
-    path: "/pages",
-    element: <PageLayout />,
-    children: [
-      {
-        path: "team",
-        element: <Team />,
-      },
-      {
-        path: "technik",
-        element: <Technik />,
-      },
-      {
-        path: "umgebung",
-        element: <Umgebung />,
-      },
-      {
-        path: "todos",
-        element: <ToDos />,
-      },
-      {
-        path: "moretodos",
-        element: <MoreToDos />,
-      },
-      {
-        path: "EmergencyAndProcedure",
-        element: <EmergencyAndProcedure />,
-      },
-    ],
-  },
-  {
-    path: "/adminpage",
-    element: <AdminLayout />,
-    children: [
-      {
-        path: "",
-        element: <Adminpage />,
-      },
-    ],
-  },
-]);
+import NotFound from "./assets/components/NotFound";
 
 // const routerPages = createBrowserRouter(
 //   createRoutesFromElements(
@@ -106,14 +52,36 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      {/* <Routes>
-        <Route exact path="/" element={<CarouselHeader />} />
-        <Route path="/*" element={<ImageHeader />} />
+      <Routes>
+        <Route element={<StartLayout />}>
+          <Route exact path="/" element={<Start />} />
+        </Route>
+
+        <Route path="pages" element={<PageLayout />}>
+          <Route exact path="Team" element={<Team />} />
+          <Route exact path="Technik" element={<Technik />} />
+          <Route exact path="Umgebung" element={<Umgebung />} />
+          <Route exact path="ToDos" element={<ToDos />} />
+          <Route exact path="MoreToDos" element={<MoreToDos />} />
+          <Route exact path="Technik" element={<Technik />} />
+          <Route exact path="Umgebung" element={<Umgebung />} />
+          <Route exact path="ToDos" element={<ToDos />} />
+          <Route exact path="MoreToDos" element={<MoreToDos />} />
+          <Route
+            exact
+            path="EmergencyAndProcedure"
+            element={<EmergencyAndProcedure />}
+          />
+        </Route>
+
+        <Route path="adminpage" element={<AdminLayout />}>
+          <Route exact path="" element={<Adminpage />} />
+        </Route>
+
+        <Route element={<StartLayout />}>
+          <Route path="/*" element={<NotFound />} />
+        </Route>
       </Routes>
-      <Navbar />
-      <div className="container-fluid p-3 text-center"></div>
-      <Footer /> */}
-      <RouterProvider router={router} />
     </>
   );
 }

@@ -18,22 +18,29 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-between"
           id="navbarNav"
         >
+          <ul className="navbar-nav d-flex">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/adminpage">
+                Adminpage:
+              </NavLink>
+            </li>
+          </ul>
           <ul className="navbar-nav d-flex justify-content-end">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" to="/adminpage/whiteboard">
                 Whiteboard
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Team">
+              <NavLink className="nav-link" to="">
                 FlightQuestions
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Technik">
+              <NavLink className="nav-link" to="">
                 MedQuestions
               </NavLink>
             </li>
