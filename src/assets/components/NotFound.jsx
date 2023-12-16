@@ -10,6 +10,7 @@ function NotFound() {
         </div>
         <div className="card-body">
           <h3>Sorry, the page you are searching for does not exist ...</h3>
+          <br />
           <NavLink to="/">Back to Startpage</NavLink>
         </div>
       </div>

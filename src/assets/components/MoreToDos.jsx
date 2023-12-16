@@ -165,7 +165,7 @@ function MoreToDos() {
 */
   return (
     <>
-      <div className="container-fluid border rounded p-2 shadow">
+      <div className="container-fluid border rounded text-center p-2 shadow">
         <h4>
           <u>{wochentagName} Tagschicht:</u>
         </h4>

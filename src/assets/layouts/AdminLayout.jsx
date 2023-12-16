@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 import { Outlet } from "react-router-dom";
 
@@ -15,12 +14,9 @@ import ImageHeader from "../components/ImageHeader";
 export default function RootLayout() {
   return (
     <>
-      <ImageHeader />
-
+      {/* <ImageHeader /> */}
+      {/* <Navbar /> */}
       <NavbarAdmin />
-
-      <h3 className="m-3 align-context-center">Adminpage:</h3>
-
       <Outlet />
     </>
   );
