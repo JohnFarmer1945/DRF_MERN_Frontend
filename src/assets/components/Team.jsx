@@ -7,7 +7,7 @@ import WhiteBoardDetails from "./WhiteBoardDetails";
 // PRODUCTION DEVELOPMENT SWITCH FOR APIs
 let myURL = "";
 if (import.meta.env.DEV === true) {
-  myURL = "api/whiteboard";
+  myURL = "../api/whiteboard";
 } else if (import.meta.env.PROD === true) {
   myURL = "https://drf-backend.onrender.com/api/whiteboard";
 }
@@ -18,7 +18,7 @@ function Team() {
   useEffect(() => {
     const fetchWhiteboard = async () => {
       const response = await fetch(myURL);
-
+      console.log(response);
       const json = await response.json();
 
       if (response.ok) {

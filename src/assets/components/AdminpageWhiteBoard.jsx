@@ -23,6 +23,7 @@ function Adminpage() {
   useEffect(() => {
     const fetchWhiteboardData = async () => {
       const response = await fetch(myURL);
+      console.log(response);
       const json = await response.json();
 
       if (response.ok) {
