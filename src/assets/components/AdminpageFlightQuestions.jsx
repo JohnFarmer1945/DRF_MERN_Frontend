@@ -4,7 +4,7 @@ import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
-  myURL = "api/flightQuestions/";
+  myURL = "../api/flightQuestions/";
 } else if (import.meta.env.PROD === true) {
   myURL = "https://drf-backend.onrender.com/api/flightQuestions/";
 }
@@ -27,6 +27,7 @@ function Adminpage() {
 
       if (response.ok) {
         setFlightQuestionsData(json);
+        console.log(flightQuestionsData);
         setWhiteboardIsPending(false);
       }
     };

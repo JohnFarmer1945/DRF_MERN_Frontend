@@ -1,38 +1,38 @@
 import { useEffect, useState } from "react";
 
-import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
+import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
-  myURL = "../api/whiteboard/";
+  myURL = "../api/flightQuestions/";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-backend.onrender.com/api/whiteboard/";
+  myURL = "https://drf-backend.onrender.com/api/flightQuestions/";
 }
 
 function Adminpage() {
-  const [whiteboardData, setWhiteboardData] = useState(null);
-  const [newTitle, setNewTitle] = useState("new Title");
-  const [newDescription, setNewDescription] = useState("new Description");
+  const [medQuestionsData, setMedQuestionsData] = useState(null);
+  const [newQuestion, setNewQuestion] = useState("new Title");
+  const [newAnswer, setNewAnswer] = useState("new Description");
   const [error, setError] = useState(null);
   const [postSend, setPostSend] = useState(false);
-  const [whiteboardIsPending, setWhiteboardIsPending] = useState(
-    "Loading whiteboard..."
+  const [medQuestionsIsPending, setMedQuestionsIsPending] = useState(
+    "Loading med Questions..."
   );
 
   // Get Whiteboard Data:
   useEffect(() => {
-    const fetchWhiteboardData = async () => {
+    const fetchMedQuestionsData = async () => {
       const response = await fetch(myURL);
-      console.log(response);
       const json = await response.json();
 
       if (response.ok) {
-        setWhiteboardData(json);
-        setWhiteboardIsPending(false);
+        setMedQuestionsData(json);
+        console.log(medQuestionsData);
+        setMedQuestionsIsPending(false);
       }
     };
 
-    fetchWhiteboardData();
+    fetchMedQuestionsData();
     setPostSend(false);
   }, [postSend]);
 
@@ -41,8 +41,8 @@ function Adminpage() {
     console.log("handleAdd clicked");
 
     const newEntry = {
-      title: newTitle,
-      description: newDescription,
+      question: newQuestion,
+      answer: newAnswer,
     };
 
     const response = await fetch(myURL, {
@@ -60,7 +60,7 @@ function Adminpage() {
     }
     if (response.ok) {
       setError(null);
-      console.log("new workout added", json);
+      console.log("new question added", json);
     }
     setPostSend(true);
   };
@@ -90,12 +90,12 @@ function Adminpage() {
   // Update Entry
 
   const handleUpdateDataFromChild = async (updateData) => {
-    let title = updateData[1];
-    let description = updateData[2];
+    let question = updateData[1];
+    let answer = updateData[2];
 
     const entryToUpdate = {
-      title: title,
-      description: description,
+      question: question,
+      answer: answer,
     };
     console.log(JSON.stringify(entryToUpdate));
 
@@ -123,26 +123,26 @@ function Adminpage() {
     <>
       <div className="card shadow">
         <div className="card-header bg-light text-start">
-          <h3 className="text-decoration-underline">White-Board:</h3>
+          <h3 className="text-decoration-underline">Med-Questions:</h3>
         </div>
         <div className="card-body">
           <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
             <thead className="text-start text-decoration-underline">
               <tr>
                 <th>#</th>
-                <th>Name:</th>
-                <th>Description:</th>
+                <th>Question:</th>
+                <th>Answer:</th>
                 <th></th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {whiteboardData &&
-                whiteboardData.map((singleWhiteBoardEntry, index) => (
-                  <SingleWhiteBoardTableLine
+              {medQuestionsData &&
+                medQuestionsData.map((singleMedQuestionEntry, index) => (
+                  <SingleMedQuestionTableLine
                     index={index + 1}
-                    key={singleWhiteBoardEntry._id}
-                    whiteboard={singleWhiteBoardEntry}
+                    key={singleMedQuestionEntry._id}
+                    singleMedQuestionEntry={singleMedQuestionEntry}
                     onDataFromChild={handleDataFromChild}
                     handleUpdateDataFromChild={handleUpdateDataFromChild}
                   />
@@ -165,8 +165,8 @@ function Adminpage() {
                     type="text"
                     size="12"
                     maxLength="12"
-                    onChange={(e) => setNewTitle(e.target.value)}
-                    value={newTitle}
+                    onChange={(e) => setNewQuestion(e.target.value)}
+                    value={newQuestion}
                   ></input>
                 </td>
                 <td>
@@ -174,8 +174,8 @@ function Adminpage() {
                     type="text"
                     size="40"
                     maxLength="40"
-                    onChange={(e) => setNewDescription(e.target.value)}
-                    value={newDescription}
+                    onChange={(e) => setNewAnswer(e.target.value)}
+                    value={newAnswer}
                   ></input>
                 </td>
                 <td>

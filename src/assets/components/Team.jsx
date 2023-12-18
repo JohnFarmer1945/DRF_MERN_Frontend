@@ -33,18 +33,6 @@ function Team() {
     <>
       <div className="container-fluid border rounded text-center p-2 shadow">
         <div className="card shadow">
-          <div className="card-header p- bg-light ">
-            <h3 className="text-decoration-underline">Team</h3>
-          </div>
-          <div className="card-body">
-            <h3>Mitflieger / Hospitationen / Einweisung</h3>
-            <h3>N&S Aktualität</h3>
-            <h3>Persönliche Tagesperformance</h3>
-          </div>
-        </div>
-        <br />
-
-        <div className="card shadow">
           <div className="card-header bg-light fw-bold ">
             <h3 className="text-decoration-underline">
               Aktuelles Station Rendsburg:
@@ -64,6 +52,17 @@ function Team() {
             </div>
           </div>
         </div>
+        <div className="card shadow">
+          <div className="card-header p- bg-light ">
+            <h3 className="text-decoration-underline">Team:</h3>
+          </div>
+          <div className="card-body">
+            <h3>Mitflieger / Hospitationen / Einweisung</h3>
+            <h3>N&S Aktualität</h3>
+            <h3>Persönliche Tagesperformance</h3>
+          </div>
+        </div>
+        <br />
       </div>
     </>
   );

@@ -23,25 +23,25 @@ function Navbar() {
         >
           <ul className="navbar-nav d-flex">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/adminpage">
+              <NavLink className="nav-link" to="/adminpage/">
                 Adminpage:
               </NavLink>
             </li>
           </ul>
           <ul className="navbar-nav d-flex justify-content-end">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/adminpage/whiteboard">
+              <NavLink className="nav-link" to="/adminpage/Whiteboard">
                 Whiteboard
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="">
-                FlightQuestions
+              <NavLink className="nav-link" to="/adminpage/MedQuestions">
+                MedQuestions
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="">
-                MedQuestions
+              <NavLink className="nav-link" to="/adminpage/Flightquestions">
+                FlightQuestions
               </NavLink>
             </li>
           </ul>

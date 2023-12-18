@@ -17,7 +17,10 @@ import Umgebung from "./assets/components/Umgebung";
 import ToDos from "./assets/components/ToDos";
 import MoreToDos from "./assets/components/MoreToDos";
 import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
-import Adminpage from "./assets/components/Adminpage";
+
+import AdminpageWhiteBoard from "./assets/components/AdminpageWhiteBoard";
+import AdminpageFlightQuestions from "./assets/components/AdminpageFlightQuestions";
+import AdminpageMedQuestions from "./assets/components/AdminpageMedQuestions";
 
 import NotFound from "./assets/components/NotFound";
 
@@ -47,10 +50,21 @@ function App() {
         </Route>
 
         <Route path="adminpage" element={<AdminLayout />}>
-          <Route exact path="" element={<Adminpage />} />
+          <Route exact path="" />
+          <Route exact path="Whiteboard" element={<AdminpageWhiteBoard />} />
+          <Route
+            exact
+            path="MedQuestions"
+            element={<AdminpageMedQuestions />}
+          />
+          <Route
+            exact
+            path="Flightquestions"
+            element={<AdminpageFlightQuestions />}
+          />
         </Route>
 
-        <Route element={<StartLayout />}>
+        <Route>
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
