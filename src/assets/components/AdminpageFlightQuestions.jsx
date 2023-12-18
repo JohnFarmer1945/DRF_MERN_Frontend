@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
+import SingleFlightQuestionTableLine from "./SingleFlightQuestionTableLine";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
@@ -11,28 +11,28 @@ if (import.meta.env.DEV === true) {
 
 function Adminpage() {
   const [flightQuestionsData, setFlightQuestionsData] = useState(null);
-  const [newTitle, setNewTitle] = useState("new Title");
-  const [newDescription, setNewDescription] = useState("new Description");
+  const [newQuestion, setNewQuestion] = useState("new Title");
+  const [newAnswer, setNewAnswer] = useState("new Description");
   const [error, setError] = useState(null);
   const [postSend, setPostSend] = useState(false);
-  const [flightQuestionsIsPending, setflightQuestionsIsPending] = useState(
+  const [medQuestionsIsPending, setFlightQuestionsIsPending] = useState(
     "Loading flight Questions..."
   );
 
   // Get Whiteboard Data:
   useEffect(() => {
-    const fetchWhiteboardData = async () => {
+    const fetchFlightQuestionsData = async () => {
       const response = await fetch(myURL);
       const json = await response.json();
 
       if (response.ok) {
         setFlightQuestionsData(json);
         console.log(flightQuestionsData);
-        setWhiteboardIsPending(false);
+        setFlightQuestionsIsPending(false);
       }
     };
 
-    fetchWhiteboardData();
+    fetchFlightQuestionsData();
     setPostSend(false);
   }, [postSend]);
 
@@ -41,8 +41,8 @@ function Adminpage() {
     console.log("handleAdd clicked");
 
     const newEntry = {
-      title: newTitle,
-      description: newDescription,
+      question: newQuestion,
+      answer: newAnswer,
     };
 
     const response = await fetch(myURL, {
@@ -60,7 +60,7 @@ function Adminpage() {
     }
     if (response.ok) {
       setError(null);
-      console.log("new workout added", json);
+      console.log("new question added", json);
     }
     setPostSend(true);
   };
@@ -90,12 +90,12 @@ function Adminpage() {
   // Update Entry
 
   const handleUpdateDataFromChild = async (updateData) => {
-    let title = updateData[1];
-    let description = updateData[2];
+    let question = updateData[1];
+    let answer = updateData[2];
 
     const entryToUpdate = {
-      title: title,
-      description: description,
+      question: question,
+      answer: answer,
     };
     console.log(JSON.stringify(entryToUpdate));
 
@@ -137,12 +137,12 @@ function Adminpage() {
               </tr>
             </thead>
             <tbody>
-              {whiteboardData &&
-                whiteboardData.map((singleWhiteBoardEntry, index) => (
-                  <SingleWhiteBoardTableLine
+              {flightQuestionsData &&
+                flightQuestionsData.map((singleFlightQuestionEntry, index) => (
+                  <SingleFlightQuestionTableLine
                     index={index + 1}
-                    key={singleWhiteBoardEntry._id}
-                    whiteboard={singleWhiteBoardEntry}
+                    key={singleFlightQuestionEntry._id}
+                    singleFlightQuestionEntry={singleFlightQuestionEntry}
                     onDataFromChild={handleDataFromChild}
                     handleUpdateDataFromChild={handleUpdateDataFromChild}
                   />
@@ -165,8 +165,8 @@ function Adminpage() {
                     type="text"
                     size="12"
                     maxLength="12"
-                    onChange={(e) => setNewTitle(e.target.value)}
-                    value={newTitle}
+                    onChange={(e) => setNewQuestion(e.target.value)}
+                    value={newQuestion}
                   ></input>
                 </td>
                 <td>
@@ -174,8 +174,8 @@ function Adminpage() {
                     type="text"
                     size="40"
                     maxLength="40"
-                    onChange={(e) => setNewDescription(e.target.value)}
-                    value={newDescription}
+                    onChange={(e) => setNewAnswer(e.target.value)}
+                    value={newAnswer}
                   ></input>
                 </td>
                 <td>

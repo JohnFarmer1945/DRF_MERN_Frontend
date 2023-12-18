@@ -4,9 +4,9 @@ import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
-  myURL = "../api/flightQuestions/";
+  myURL = "../api/medQuestions/";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-backend.onrender.com/api/flightQuestions/";
+  myURL = "https://drf-backend.onrender.com/api/medQuestions/";
 }
 
 function Adminpage() {
