@@ -16,7 +16,7 @@ export default function RootLayout() {
     <>
       {/* <ImageHeader /> */}
       {/* <Navbar /> */}
-      <NavbarAdmin />
+
       <NavbarAdmin />
       <Outlet />
     </>
