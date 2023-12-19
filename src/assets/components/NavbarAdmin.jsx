@@ -22,7 +22,11 @@ function Navbar() {
           id="navbarNav"
         >
           <ul className="navbar-nav d-flex ">
-            <li className="nav-item adminpage">Adminpage</li>
+            <li className="nav-item adminpage">
+              <NavLink className="nav-link" to="/adminpage">
+                Adminpage
+              </NavLink>
+            </li>
           </ul>
           <ul className="navbar-nav d-flex justify-content-end">
             <li className="nav-item">
