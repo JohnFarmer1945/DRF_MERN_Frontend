@@ -165,26 +165,62 @@ function MoreToDos() {
 */
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2 shadow">
-        <h4>
-          <u>{wochentagName} Tagschicht:</u>
-        </h4>
-        <div className="d-flex flex-row justify-content-evenly m-3">
-          <div className="col-5">
-            <div className="card shadow p-2">
-              <div className="card-header">Flug</div>
-              <div className="card-body">
-                <h5 className="card-title">{tagSchichtFlug}</h5>
-                <p className="card-text"></p>
+      <div className="container-fluid border rounded text-center shadow">
+        <div className="card shadow p-2">
+          <div className="card-header p- bg-light ">
+            <h4 className="text-decoration-underline">
+              <u>{wochentagName} Tagschicht:</u>
+            </h4>
+          </div>
+          <h4></h4>
+          <div className="d-flex flex-row justify-content-evenly m-3">
+            <div className="col-5">
+              <div className="card shadow p-2">
+                <div className="card-header">Flug</div>
+                <div className="card-body">
+                  <h5 className="card-title">{tagSchichtFlug}</h5>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-5">
+              <div className="card shadow  p-2">
+                <div className="card-header">Medizin</div>
+                <div className="card-body">
+                  <h5 className="card-title">{tagSchichtMedizin}</h5>
+                  <p className="card-text"></p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-5">
-            <div className="card shadow  p-2">
-              <div className="card-header">Medizin</div>
-              <div className="card-body">
-                <h5 className="card-title">{tagSchichtMedizin}</h5>
-                <p className="card-text"></p>
+        </div>
+      </div>
+
+      <div className="container-fluid border rounded text-center p-2 shadow">
+        <div className="card shadow p-2">
+          <div className="card-header p- bg-light ">
+            <h4 className="text-decoration-underline">
+              <u>{wochentagName} Nachtschicht:</u>
+            </h4>
+          </div>
+
+          <div className="d-flex flex-row justify-content-evenly m-3">
+            <div className="col-5">
+              <div className="card shadow p-2">
+                <div className="card-header">Flug</div>
+                <div className="card-body">
+                  <h5 className="card-title">{NachtSchichtFlug}</h5>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-5">
+              <div className="card shadow p-2">
+                <div className="card-header">Medizin</div>
+                <div className="card-body">
+                  <h5 className="card-title">{NachtSchichtMedizin}</h5>
+                  <p className="card-text"></p>
+                </div>
               </div>
             </div>
           </div>
@@ -192,34 +228,12 @@ function MoreToDos() {
       </div>
       <br />
       <div className="container-fluid border rounded text-center p-2 shadow">
-        <h4>
-          <u>{wochentagName} Nachtschicht:</u>
-        </h4>
-        <div className="d-flex flex-row justify-content-evenly m-3">
-          <div className="col-5">
-            <div className="card shadow p-2">
-              <div className="card-header">Flug</div>
-              <div className="card-body">
-                <h5 className="card-title">{NachtSchichtFlug}</h5>
-                <p className="card-text"></p>
-              </div>
-            </div>
-          </div>
-          <div className="col-5">
-            <div className="card shadow p-2">
-              <div className="card-header">Medizin</div>
-              <div className="card-body">
-                <h5 className="card-title">{NachtSchichtMedizin}</h5>
-                <p className="card-text"></p>
-              </div>
-            </div>
+        <div className="card shadow m-2">
+          <div className="card-body">
+            <h2>Anstehende Flüge</h2>
+            <h2>Compressor rinsing?</h2>
           </div>
         </div>
-      </div>
-      <br />
-      <div className="container-fluid border rounded text-center p-2 shadow">
-        <h2>Anstehende Flüge</h2>
-        <h2>Compressor rinsing?</h2>
       </div>
     </>
   );
@@ -227,54 +241,13 @@ function MoreToDos() {
 
 export default MoreToDos;
 
-/*
-import { useState, useEffect } from "react";
-
-
-const [, setDateTime] = useState(null);
-const [isPending, setIsPending] = useState("Loading ...");
-
-function DateTime() {
-  const [dateTime, setDateTime] = useState(null);
-  const [isPending, setIsPending] = useState("Loading ...");
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      let myDate = new Date();
-
-      let day = myDate.getDate();
-      let month = myDate.getMonth();
-      let year = myDate.getFullYear();
-      let hours = checkDigitalFigures0Before(myDate.getHours());
-      let minutes = checkDigitalFigures0Before(myDate.getMinutes());
-      let seconds = checkDigitalFigures0Before(myDate.getSeconds());
-      let newDateTime =
-        day +
-        "/" +
-        month +
-        "/" +
-        year +
-        " | " +
-        hours +
-        ":" +
-        minutes +
-        ":" +
-        seconds;
-
-      setDateTime(newDateTime + " Uhr ");
-      setIsPending(false);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  return (
-    <>
-      {isPending && isPending}
-      {dateTime && dateTime}
-    </>
-  );
-}
-
-export default DateTime;
-*/
+<div className="card shadow m-2">
+  <div className="card-header p- bg-light ">
+    <h3 className="text-decoration-underline">Team:</h3>
+  </div>
+  <div className="card-body">
+    <h3>Mitflieger / Hospitationen / Einweisung</h3>
+    <h3>N&S Aktualität</h3>
+    <h3>Persönliche Tagesperformance</h3>
+  </div>
+</div>;

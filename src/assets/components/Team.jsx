@@ -31,8 +31,8 @@ function Team() {
 
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2 shadow">
-        <div className="card shadow">
+      <div className="container-fluid border rounded text-center shadow">
+        <div className="card shadow m-2">
           <div className="card-header bg-light fw-bold ">
             <h3 className="text-decoration-underline">
               Aktuelles Station Rendsburg:
@@ -52,7 +52,7 @@ function Team() {
             </div>
           </div>
         </div>
-        <div className="card shadow">
+        <div className="card shadow m-2">
           <div className="card-header p- bg-light ">
             <h3 className="text-decoration-underline">Team:</h3>
           </div>
@@ -62,7 +62,6 @@ function Team() {
             <h3>Persönliche Tagesperformance</h3>
           </div>
         </div>
-        <br />
       </div>
     </>
   );
