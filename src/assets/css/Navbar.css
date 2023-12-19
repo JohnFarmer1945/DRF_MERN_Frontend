@@ -18,7 +18,8 @@
   color: #e30613;
 }
 
-#adminpage {
+.adminpage {
   background-color: #e30613;
   color: white;
+  font-weight: bold;
 }

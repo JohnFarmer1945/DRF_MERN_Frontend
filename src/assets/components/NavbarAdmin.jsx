@@ -21,12 +21,8 @@ function Navbar() {
           className="collapse navbar-collapse justify-content-between"
           id="navbarNav"
         >
-          <ul className="navbar-nav d-flex">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/adminpage/">
-                Adminpage:
-              </NavLink>
-            </li>
+          <ul className="navbar-nav d-flex ">
+            <li className="nav-item adminpage">Adminpage</li>
           </ul>
           <ul className="navbar-nav d-flex justify-content-end">
             <li className="nav-item">
