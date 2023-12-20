@@ -21,6 +21,7 @@ import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
 import AdminpageWhiteBoard from "./assets/components/AdminpageWhiteBoard";
 import AdminpageFlightQuestions from "./assets/components/AdminpageFlightQuestions";
 import AdminpageMedQuestions from "./assets/components/AdminpageMedQuestions";
+import AdminpageWeekTasks from "./assets/components/AdminpageWeekTasks";
 
 import NotFound from "./assets/components/NotFound";
 
@@ -62,6 +63,7 @@ function App() {
             path="Flightquestions"
             element={<AdminpageFlightQuestions />}
           />
+          <Route exact path="WeekTasks" element={<AdminpageWeekTasks />} />
         </Route>
 
         <Route>

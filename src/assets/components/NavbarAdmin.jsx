@@ -44,6 +44,11 @@ function Navbar() {
                 FlightQuestions
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/adminpage/WeekTasks">
+                WeekTasks
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
