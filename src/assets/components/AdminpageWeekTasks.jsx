@@ -26,8 +26,25 @@ function AdminpageWeekTasks() {
         //setWeekTasksData(json);
         const listItems = json.map((task) => (
           <Fragment key={task._id}>
-            <h1>{task.TagFlug}</h1>
-            <h1>{task.TagMedizin}</h1>
+            <tr>
+              <th scope="row">{task.day}</th>
+              <th scope="row">Tag</th>
+              <td>{task.TagFlug}</td>
+              <td>{task.TagMedizin}</td>
+              <td>
+                <i className="bi bi-pencil"></i>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <th scope="row">Nacht</th>
+              <td>{task.NachtFlug}</td>
+              <td>{task.NachtMedizin}</td>
+
+              <td>
+                <i className="bi bi-pencil"></i>
+              </td>
+            </tr>
           </Fragment>
         ));
 
@@ -44,7 +61,6 @@ function AdminpageWeekTasks() {
 
   return (
     <>
-      {weekTasksData}
       <div className="card shadow">
         <div className="card-header bg-light text-start">
           <h3 className="text-decoration-underline">Week-Tasks:</h3>
@@ -60,27 +76,7 @@ function AdminpageWeekTasks() {
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Montag</th>
-                <th scope="row">Tag</th>
-                <td>Jacob</td>
-                <td>Jacob</td>
-                <td>
-                  <i className="bi bi-pencil"></i>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <th scope="row">Nacht</th>
-                <td>Jacob</td>
-                <td>Jacob</td>
-
-                <td>
-                  <i className="bi bi-pencil"></i>
-                </td>
-              </tr>
-            </tbody>
+            <tbody>{weekTasksData}</tbody>
           </table>
         </div>
       </div>
