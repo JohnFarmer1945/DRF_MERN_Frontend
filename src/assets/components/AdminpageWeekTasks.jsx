@@ -1,4 +1,39 @@
+import { useEffect, useState } from "react";
+
+import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
+
+let myURL = "";
+if (import.meta.env.DEV === true) {
+  myURL = "../api/tasks/";
+} else if (import.meta.env.PROD === true) {
+  myURL = "https://drf-backend.onrender.com/api/tasks/";
+}
+
 function AdminpageWeekTasks() {
+  const [weekTasksData, setWeekTasksData] = useState(null);
+  const [weekTasksDataIsPending, setweekTasksDataIsPending] = useState(
+    "Loading WeekTasks ..."
+  );
+  const [fetchTasksAgain, setFetchTasksAgain] = useState(true);
+
+  // Get WeekTasks Data:
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await fetch(myURL);
+      const json = await response.json();
+
+      if (response.ok) {
+        setWeekTasksData(json);
+
+        setweekTasksDataIsPending(false);
+      }
+    };
+
+    fetchTasks();
+    setFetchTasksAgain(false);
+    console.log(weekTasksData);
+  }, [fetchTasksAgain]);
+
   return (
     <>
       <div className="card shadow">
@@ -6,14 +41,13 @@ function AdminpageWeekTasks() {
           <h3 className="text-decoration-underline">Week-Tasks:</h3>
         </div>
         <div className="card-body">
-          <table class="table table-hover table-bordered table-sm w-auto">
+          <table className="table table-hover table-bordered table-sm w-auto">
             <thead>
               <tr>
                 <th scope="col"></th>
                 <th scope="col">Schicht</th>
                 <th scope="col">Flug</th>
                 <th scope="col">Medizin</th>
-                <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
             </thead>
