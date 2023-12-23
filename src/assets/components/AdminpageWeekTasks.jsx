@@ -31,9 +31,7 @@ function AdminpageWeekTasks() {
               <th scope="row">Tag</th>
               <td>{task.TagFlug}</td>
               <td>{task.TagMedizin}</td>
-              <td>
-                <i className="bi bi-pencil"></i>
-              </td>
+              <td></td>
             </tr>
             <tr>
               <th scope="row"></th>
@@ -62,11 +60,8 @@ function AdminpageWeekTasks() {
   return (
     <>
       <div className="card shadow">
-        <div className="card-header bg-light text-start">
-          <h3 className="text-decoration-underline">Week-Tasks:</h3>
-        </div>
         <div className="card-body">
-          <table className="table table-hover table-bordered table-sm w-auto">
+          <table className="table table-hover table-striped table-sm w-auto align-top">
             <thead>
               <tr>
                 <th scope="col"></th>

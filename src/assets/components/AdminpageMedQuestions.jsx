@@ -122,9 +122,6 @@ function Adminpage() {
   return (
     <>
       <div className="card shadow">
-        <div className="card-header bg-light text-start">
-          <h3 className="text-decoration-underline">Med-Questions:</h3>
-        </div>
         <div className="card-body">
           <table className="table table-striped table-borderless table-sm w-auto align-middle text-center">
             <thead className="text-start text-decoration-underline">
