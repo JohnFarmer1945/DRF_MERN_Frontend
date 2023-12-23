@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 
 import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
 
@@ -23,19 +23,28 @@ function AdminpageWeekTasks() {
       const json = await response.json();
 
       if (response.ok) {
-        setWeekTasksData(json);
+        //setWeekTasksData(json);
+        const listItems = json.map((task) => (
+          <Fragment key={task._id}>
+            <h1>{task.TagFlug}</h1>
+            <h1>{task.TagMedizin}</h1>
+          </Fragment>
+        ));
+
+        setWeekTasksData(listItems);
 
         setweekTasksDataIsPending(false);
       }
     };
 
     fetchTasks();
+
     setFetchTasksAgain(false);
-    console.log(weekTasksData);
   }, [fetchTasksAgain]);
 
   return (
     <>
+      {weekTasksData}
       <div className="card shadow">
         <div className="card-header bg-light text-start">
           <h3 className="text-decoration-underline">Week-Tasks:</h3>
