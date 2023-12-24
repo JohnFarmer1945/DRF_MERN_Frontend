@@ -12,7 +12,9 @@ if (import.meta.env.DEV === true) {
 function AdminpageWeekTasks() {
   const [DayTaskData, setDayTaskData] = useState(null);
   const [dayTaskDataIsPending, setdayTaskDataIsPending] = useState(
-    "Loading WeekTasks ..."
+    <tr>
+      <td colSpan="4">Loading ...</td>
+    </tr>
   );
   const [fetchTaskDayAgain, setTaskDayAgain] = useState(true);
 
@@ -30,7 +32,7 @@ function AdminpageWeekTasks() {
         setDayTaskData(jsonAsArray);
         const listItems = jsonAsArray.map((task) => (
           <Fragment key={task._id}>
-            <tr className="row_active">
+            <tr>
               <th scope="row">{task.Day}</th>
               <th scope="row">Tag</th>
               <td>{task.TagFlug}</td>
@@ -70,9 +72,9 @@ function AdminpageWeekTasks() {
         <br />
         <div className="card shadow">
           <div className="card-body">
-            <table className="table table-hover table-striped table-sm w-auto align-top">
+            <table className="table table-hover table-sm w-auto align-top">
               <thead>
-                <tr>
+                <tr className="table-active">
                   <th scope="col"></th>
                   <th scope="col">Schicht</th>
                   <th scope="col">Flug</th>
@@ -80,7 +82,7 @@ function AdminpageWeekTasks() {
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody>{DayTaskData}</tbody>
+              <tbody>{DayTaskData ? DayTaskData : dayTaskDataIsPending}</tbody>
             </table>
           </div>
         </div>
