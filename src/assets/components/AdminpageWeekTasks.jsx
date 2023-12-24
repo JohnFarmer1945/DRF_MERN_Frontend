@@ -27,11 +27,13 @@ function AdminpageWeekTasks() {
         const listItems = json.map((task) => (
           <Fragment key={task._id}>
             <tr>
-              <th scope="row">{task.day}</th>
+              <th scope="row">{task.Day}</th>
               <th scope="row">Tag</th>
               <td>{task.TagFlug}</td>
               <td>{task.TagMedizin}</td>
-              <td></td>
+              <td>
+                <i className="bi bi-pencil"></i>
+              </td>
             </tr>
             <tr>
               <th scope="row"></th>
@@ -39,9 +41,7 @@ function AdminpageWeekTasks() {
               <td>{task.NachtFlug}</td>
               <td>{task.NachtMedizin}</td>
 
-              <td>
-                <i className="bi bi-pencil"></i>
-              </td>
+              <td></td>
             </tr>
           </Fragment>
         ));
