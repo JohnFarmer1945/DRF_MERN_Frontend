@@ -1,6 +1,6 @@
 import { useEffect, useState, Fragment } from "react";
 
-//import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
+import "../css/MoreToDos.css";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
@@ -30,13 +30,13 @@ function AdminpageWeekTasks() {
         setDayTaskData(jsonAsArray);
         const listItems = jsonAsArray.map((task) => (
           <Fragment key={task._id}>
-            <tr>
+            <tr className="row_active">
               <th scope="row">{task.Day}</th>
               <th scope="row">Tag</th>
               <td>{task.TagFlug}</td>
               <td>{task.TagMedizin}</td>
             </tr>
-            <tr>
+            <tr className="row_active">
               <th scope="row"></th>
               <th scope="row">Nacht</th>
               <td>{task.NachtFlug}</td>
@@ -60,20 +60,29 @@ function AdminpageWeekTasks() {
 
   return (
     <>
-      <div className="card shadow">
-        <div className="card-body">
-          <table className="table table-hover table-striped table-sm w-auto align-top">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Schicht</th>
-                <th scope="col">Flug</th>
-                <th scope="col">Medizin</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>{DayTaskData}</tbody>
-          </table>
+      <div className="container-fluid border rounded text-center shadow">
+        <div className="card shadow m-2">
+          <div className="card-body">
+            <h2>Anstehende Flüge</h2>
+            <h2>Compressor rinsing?</h2>
+          </div>
+        </div>
+        <br />
+        <div className="card shadow">
+          <div className="card-body">
+            <table className="table table-hover table-striped table-sm w-auto align-top">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Schicht</th>
+                  <th scope="col">Flug</th>
+                  <th scope="col">Medizin</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>{DayTaskData}</tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>
