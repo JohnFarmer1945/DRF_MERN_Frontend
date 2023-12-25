@@ -141,22 +141,22 @@ if (import.meta.env.DEV === true) {
 }
 
 function EmergencyAndProcedure() {
-  const [flightQuestion, setFlightQuestion] = useState("");
+  const [flightQuestion, setFlightQuestion] = useState(" ");
   const [flighQuestionLoading, setFlighQuestionLoading] = useState(false);
 
   const handleClickFlight = () => {
-    setFlighQuestionLoading(true);
     const fetchFlightQuestionsData = async () => {
       const response = await fetch(myURL);
       const json = await response.json();
 
       if (response.ok) {
         console.log(json.question);
-        setFlighQuestionLoading(false);
+
         setFlightQuestion(json.question);
+        setFlighQuestionLoading(false);
       }
     };
-
+    setFlighQuestionLoading("Loading");
     fetchFlightQuestionsData();
   };
 
@@ -177,7 +177,10 @@ function EmergencyAndProcedure() {
             <div className="card shadow">
               <div className="card-header">Flugbetriebliches Notverfahren</div>
               <div className="card-body">
-                <h5 className="card-title">{flightQuestion}</h5>
+                <h5 className="card-title">
+                  {flightQuestion && flightQuestion}
+                  {flighQuestionLoading && flighQuestionLoading}
+                </h5>
                 <br />
                 <button onClick={handleClickFlight} className="btn btn-primary">
                   Klicken für Zufallsfrage
