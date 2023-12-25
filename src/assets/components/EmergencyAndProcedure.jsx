@@ -133,14 +133,31 @@ document
 
   */
 
+let myURL = "";
+if (import.meta.env.DEV === true) {
+  myURL = "../api/flightQuestions/random/";
+} else if (import.meta.env.PROD === true) {
+  myURL = "https://drf-backend.onrender.com/api/flightQuestions/random/";
+}
+
 function EmergencyAndProcedure() {
   const [flightQuestion, setFlightQuestion] = useState("");
-  const handleClickFlight = () => {
-    let y = Math.floor(Math.random() * questionArrayFlight.length);
-    let z = y + 1;
-    let x = "Frage " + z + ": " + '"' + questionArrayFlight[y] + '"';
+  const [flighQuestionLoading, setFlighQuestionLoading] = useState(false);
 
-    setFlightQuestion(x);
+  const handleClickFlight = () => {
+    setFlighQuestionLoading(true);
+    const fetchFlightQuestionsData = async () => {
+      const response = await fetch(myURL);
+      const json = await response.json();
+
+      if (response.ok) {
+        console.log(json.question);
+        setFlighQuestionLoading(false);
+        setFlightQuestion(json.question);
+      }
+    };
+
+    fetchFlightQuestionsData();
   };
 
   const [medQuestion, setMedQuestion] = useState("");
