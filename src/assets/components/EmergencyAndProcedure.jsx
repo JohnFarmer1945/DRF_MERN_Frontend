@@ -140,6 +140,13 @@ if (import.meta.env.DEV === true) {
   myURL = "https://drf-backend.onrender.com/api/flightQuestions/random/";
 }
 
+let myURL1 = "";
+if (import.meta.env.DEV === true) {
+  myURL1 = "../api/medQuestions/random/";
+} else if (import.meta.env.PROD === true) {
+  myURL1 = "https://drf-backend.onrender.com/api/medQuestions/random/";
+}
+
 function EmergencyAndProcedure() {
   const [flightQuestion, setFlightQuestion] = useState(" ");
   const [flighQuestionLoading, setFlighQuestionLoading] = useState(false);
@@ -160,14 +167,33 @@ function EmergencyAndProcedure() {
     fetchFlightQuestionsData();
   };
 
-  const [medQuestion, setMedQuestion] = useState("");
-  const handleClickMed = () => {
-    let y = Math.floor(Math.random() * questionArrayMed.length);
-    let z = y + 1;
-    let x = "Frage " + z + ": " + '"' + questionArrayMed[y] + '"';
+  const [medQuestion, setmedQuestion] = useState(" ");
+  const [medQuestionLoading, setmedQuestionLoading] = useState(false);
 
-    setMedQuestion(x);
+  const handleClickMed = () => {
+    const fetchMedQuestionsData = async () => {
+      const response = await fetch(myURL1);
+      const json = await response.json();
+
+      if (response.ok) {
+        console.log(json.question);
+
+        setmedQuestion(json.question);
+        setmedQuestionLoading(false);
+      }
+    };
+    setmedQuestionLoading("Loading");
+    fetchMedQuestionsData();
   };
+
+  // const [medQuestion, setMedQuestion] = useState("");
+  // const handleClickMed = () => {
+  //   let y = Math.floor(Math.random() * questionArrayMed.length);
+  //   let z = y + 1;
+  //   let x = "Frage " + z + ": " + '"' + questionArrayMed[y] + '"';
+
+  //   setMedQuestion(x);
+  // };
 
   return (
     <>
@@ -197,7 +223,10 @@ function EmergencyAndProcedure() {
             <div className="card shadow">
               <div className="card-header">Medizinisches Verfahren</div>
               <div className="card-body">
-                <h5 className="card-title">{medQuestion}</h5>
+                <h5 className="card-title">
+                  {medQuestion && medQuestion}
+                  {medQuestionLoading && medQuestionLoading}
+                </h5>
                 <br />
                 <button onClick={handleClickMed} className="btn btn-primary">
                   Klicken für Zufallsfrage
