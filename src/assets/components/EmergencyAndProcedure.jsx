@@ -142,13 +142,13 @@ if (import.meta.env.DEV === true) {
 
 let myURL1 = "";
 if (import.meta.env.DEV === true) {
-  myURL1 = "../api/medQuestions/random/";
+  myURL1 = "../api/medQuestions/random";
 } else if (import.meta.env.PROD === true) {
-  myURL1 = "https://drf-backend.onrender.com/api/medQuestions/random/";
+  myURL1 = "https://drf-backend.onrender.com/api/medQuestions/";
 }
 
 function EmergencyAndProcedure() {
-  const [flightQuestion, setFlightQuestion] = useState(" ");
+  const [flightQuestion, setFlightQuestion] = useState("");
   const [flighQuestionLoading, setFlighQuestionLoading] = useState(false);
 
   const handleClickFlight = () => {
@@ -157,8 +157,6 @@ function EmergencyAndProcedure() {
       const json = await response.json();
 
       if (response.ok) {
-        console.log(json.question);
-
         setFlightQuestion(json.question);
         setFlighQuestionLoading(false);
       }
@@ -167,17 +165,16 @@ function EmergencyAndProcedure() {
     fetchFlightQuestionsData();
   };
 
-  const [medQuestion, setmedQuestion] = useState(" ");
+  const [medQuestion, setmedQuestion] = useState("");
   const [medQuestionLoading, setmedQuestionLoading] = useState(false);
 
   const handleClickMed = () => {
     const fetchMedQuestionsData = async () => {
       const response = await fetch(myURL1);
+
       const json = await response.json();
 
       if (response.ok) {
-        console.log(json.question);
-
         setmedQuestion(json.question);
         setmedQuestionLoading(false);
       }

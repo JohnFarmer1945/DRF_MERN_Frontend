@@ -19,7 +19,7 @@ function Adminpage() {
     "Loading med Questions..."
   );
 
-  // Get Whiteboard Data:
+  // Get Med Data:
   useEffect(() => {
     const fetchMedQuestionsData = async () => {
       const response = await fetch(myURL);
