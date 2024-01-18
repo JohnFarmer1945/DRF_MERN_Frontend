@@ -197,7 +197,7 @@ function EmergencyAndProcedure() {
 
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2 shadow">
+      <div className="container-fluid border rounded text-center p-0 ">
         <div className="d-flex flex-row justify-content-evenly m-3">
           <div className="col-8">
             <div className="card shadow">
@@ -216,7 +216,7 @@ function EmergencyAndProcedure() {
           </div>
         </div>
       </div>
-      <br />
+
       <div className="container-fluid border rounded text-center p-2 shadow">
         <div className="d-flex flex-row justify-content-evenly m-3">
           <div className="col-8">

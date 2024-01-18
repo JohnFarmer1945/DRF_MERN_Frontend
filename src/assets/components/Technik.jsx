@@ -1,8 +1,8 @@
 function Technik() {
   return (
     <>
-      <div className="container-fluid border rounded text-center p-2 shadow">
-        <div className="card shadow m-2">
+      <div className="container-fluid border rounded text-center p-0">
+        <div className="card shadow ">
           <div className="card-body">
             <h2>Hubschrauber (Besonderheiten / Betankung)</h2>
             <h2>Technische Einschränkungen</h2>

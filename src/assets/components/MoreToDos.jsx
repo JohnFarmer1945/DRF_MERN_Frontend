@@ -62,14 +62,14 @@ function AdminpageWeekTasks() {
 
   return (
     <>
-      <div className="container-fluid border rounded text-center shadow">
-        <div className="card shadow m-2">
+      <div className="container-fluid border rounded text-center p-0 ">
+        <div className="card shadow ">
           <div className="card-body">
             <h2>Anstehende Flüge</h2>
             <h2>Compressor rinsing?</h2>
           </div>
         </div>
-        <br />
+
         <div className="card shadow">
           <div className="card-body">
             <table className="table table-hover table-sm w-auto align-top">
