@@ -10,7 +10,7 @@ const SingleMedQuestionTableLine = ({
   const [answer, setAnswer] = useState(singleMedQuestionEntry.answer);
   const [inputValue, setInputValue] = useState(singleMedQuestionEntry._id);
 
-  // Delte Data
+  // Delete Data
   const sendDataToParent = () => {
     onDataFromChild(inputValue);
   };

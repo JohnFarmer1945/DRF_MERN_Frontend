@@ -27,7 +27,7 @@ function Adminpage() {
 
       if (response.ok) {
         setMedQuestionsData(json);
-        console.log(medQuestionsData);
+
         setMedQuestionsIsPending(false);
       }
     };
