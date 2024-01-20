@@ -1,8 +1,14 @@
 import { NavLink } from "react-router-dom";
-
+import { useLogout } from "../hooks/useLogout";
 import "../css/Navbar.css";
 
 function Navbar() {
+  const { logout } = useLogout();
+
+  const handleLockoutClick = () => {
+    logout();
+  };
+
   return (
     <nav className="navbar navbar-expand-md p-0" id="sidebar">
       <div className="container-fluid">
@@ -47,6 +53,21 @@ function Navbar() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/adminpage/WeekTasks">
                 WeekTasks
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="collapse navbar-collapse justify-content-right "
+          id="navbarNav"
+        >
+          <ul className="navbar-nav d-flex ms-auto ">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                <i class="bi bi-door-open" onClick={handleLockoutClick}>
+                  {" "}
+                  Logout
+                </i>
               </NavLink>
             </li>
           </ul>

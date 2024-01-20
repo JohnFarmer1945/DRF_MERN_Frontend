@@ -19,10 +19,10 @@ function Navbar() {
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-end"
+          className="collapse navbar-collapse justify-content-center"
           id="navbarNav"
         >
-          <ul className="navbar-nav d-flex justifiy-content-center">
+          <ul className="navbar-nav d-flex ">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
                 Start
@@ -66,8 +66,8 @@ function Navbar() {
         >
           <ul className="navbar-nav d-flex ms-auto ">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/adminpage">
-                <i class="bi bi-door-closed"></i>
+              <NavLink className="nav-link" to="/login">
+                <i class="bi bi-door-closed"> Login</i>
               </NavLink>
             </li>
           </ul>
