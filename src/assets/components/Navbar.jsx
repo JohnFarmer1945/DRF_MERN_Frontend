@@ -17,11 +17,12 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
-          <ul className="navbar-nav d-flex justify-content-end">
+          <ul className="navbar-nav d-flex justifiy-content-center">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
                 Start
@@ -55,6 +56,18 @@ function Navbar() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/pages/EmergencyAndProcedure">
                 Emergency & Procedure
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="collapse navbar-collapse justify-content-right "
+          id="navbarNav"
+        >
+          <ul className="navbar-nav d-flex ms-auto ">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/adminpage">
+                <i class="bi bi-door-closed"></i>
               </NavLink>
             </li>
           </ul>

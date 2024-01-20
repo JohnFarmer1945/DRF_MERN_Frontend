@@ -10,6 +10,7 @@ import PageLayout from "./assets/layouts/PageLayout";
 
 //Components
 
+// Pages
 import Start from "./assets/components/Start";
 import Team from "./assets/components/Team";
 import Technik from "./assets/components/Technik";
@@ -18,10 +19,15 @@ import ToDos from "./assets/components/ToDos";
 import MoreToDos from "./assets/components/MoreToDos";
 import EmergencyAndProcedure from "./assets/components/EmergencyAndProcedure";
 
+// Admin
 import AdminpageWhiteBoard from "./assets/components/AdminpageWhiteBoard";
 import AdminpageFlightQuestions from "./assets/components/AdminpageFlightQuestions";
 import AdminpageMedQuestions from "./assets/components/AdminpageMedQuestions";
 import AdminpageWeekTasks from "./assets/components/AdminpageWeekTasks";
+
+// Auth
+import Signup from "./assets/components/Signup";
+import Login from "./assets/components/Login";
 
 import NotFound from "./assets/components/NotFound";
 
@@ -64,6 +70,11 @@ function App() {
             element={<AdminpageFlightQuestions />}
           />
           <Route exact path="WeekTasks" element={<AdminpageWeekTasks />} />
+        </Route>
+
+        <Route>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Route>
 
         <Route>
