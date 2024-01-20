@@ -13,7 +13,7 @@ function Adminpage() {
   const [medTasksData, setMedTasksData] = useState(null);
   const [error, setError] = useState(null);
   const [postSend, setPostSend] = useState(false);
-  const [medDataIsPending, setmedDataIsPending] = useState(
+  const [medDataIsPending, setMedDataIsPending] = useState(
     "Loading Wochenplan ..."
   );
 
@@ -28,13 +28,13 @@ function Adminpage() {
 
         setMedTasksData(json);
 
-        medTasksDataIsPending(false);
+        setMedDataIsPending(false);
       }
     };
 
     fetchMedTasksData();
     setPostSend(false);
-    setmedDataIsPending(false);
+    setMedDataIsPending(false);
   }, [postSend]);
 
   // Update Data in Mongo DB
@@ -73,6 +73,7 @@ function Adminpage() {
     <>
       <div className="card shadow">
         <div className="card-body">
+          {medDataIsPending && medDataIsPending}
           <table className="table table-hover table-striped table-sm w-auto align-top">
             <thead>
               <tr>
@@ -86,7 +87,8 @@ function Adminpage() {
               </tr>
             </thead>
             <tbody>
-              {medDataIsPending && medDataIsPending}
+              <tr></tr>
+
               {medTasksData &&
                 medTasksData.map((singleMedTasksDataEntry, index) => (
                   <SingleMedDataTableLine

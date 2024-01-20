@@ -13,23 +13,6 @@ const Signup = () => {
   };
 
   return (
-    // <form className="signup" onSubmit={handleSubmit}>
-    //   <h3>Sign up </h3>
-    //   <label>Email:</label>
-    //   <input
-    //     type="email"
-    //     onChange={(e) => setEmail(e.target.value)}
-    //     value={email}
-    //   />
-    //   <label>Password:</label>
-    //   <input
-    //     type="password"
-    //     onChange={(e) => setPassword(e.target.value)}
-    //     value={password}
-    //   />
-    //   <button>Sign up</button>
-    // </form>
-
     <div className="container-fluid border rounded text-center p-5 ">
       <form className="border p-3" onSubmit={handleSubmit}>
         <h3 className="text-decoration-underline">Signup</h3>

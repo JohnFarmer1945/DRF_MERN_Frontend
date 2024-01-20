@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 import "../css/Navbar.css";
 
 function Navbar() {
+  const { user } = useAuthContext();
   const { logout } = useLogout();
 
   const handleLockoutClick = () => {
@@ -62,14 +64,26 @@ function Navbar() {
           id="navbarNav"
         >
           <ul className="navbar-nav d-flex ms-auto ">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                <i class="bi bi-door-open" onClick={handleLockoutClick}>
-                  {" "}
-                  Logout
-                </i>
-              </NavLink>
-            </li>
+            {user && (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  {/* <span>{user.email} | </span> */}
+                  <i
+                    className="bi bi-box-arrow-right"
+                    onClick={handleLockoutClick}
+                  >
+                    Logout
+                  </i>
+                </NavLink>
+              </li>
+            )}
+            {!user && (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/login">
+                  <i className="bi bi-box-arrow-in-left">Login</i>
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
       </div>
