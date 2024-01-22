@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useAuthContext } from "../hooks/useAuthContext";
 import SingleWhiteBoardTableLine from "./SingleWhiteBoardTableLine";
 
 let myURL = "";
@@ -18,12 +18,16 @@ function Adminpage() {
   const [whiteboardIsPending, setWhiteboardIsPending] = useState(
     "Loading whiteboard..."
   );
+  const { user } = useAuthContext();
 
   // Get Whiteboard Data:
   useEffect(() => {
     const fetchWhiteboardData = async () => {
-      const response = await fetch(myURL);
-      console.log(response);
+      const response = await fetch(myURL, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -31,10 +35,11 @@ function Adminpage() {
         setWhiteboardIsPending(false);
       }
     };
-
-    fetchWhiteboardData();
-    setPostSend(false);
-  }, [postSend]);
+    if (user) {
+      fetchWhiteboardData();
+      setPostSend(false);
+    }
+  }, [postSend, user]);
 
   // Create Entry Fetch
   const handleAdd = async () => {

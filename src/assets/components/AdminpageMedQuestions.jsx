@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useAuthContext } from "../hooks/useAuthContext";
 import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
 
 let myURL = "";
@@ -18,11 +18,15 @@ function Adminpage() {
   const [medQuestionsIsPending, setMedQuestionsIsPending] = useState(
     "Loading med Questions..."
   );
-
+  const { user } = useAuthContext();
   // Get Med Data:
   useEffect(() => {
     const fetchMedQuestionsData = async () => {
-      const response = await fetch(myURL);
+      const response = await fetch(myURL, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -32,9 +36,11 @@ function Adminpage() {
       }
     };
 
-    fetchMedQuestionsData();
-    setPostSend(false);
-  }, [postSend]);
+    if (user) {
+      fetchMedQuestionsData();
+      setPostSend(false);
+    }
+  }, [postSend, user]);
 
   // Create Entry Fetch
   const handleAdd = async () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useAuthContext } from "../hooks/useAuthContext";
 import SingleMedDataTableLine from "./SingleMedDataTableLine";
 
 let myURL = "";
@@ -16,11 +16,16 @@ function Adminpage() {
   const [medDataIsPending, setMedDataIsPending] = useState(
     "Loading Wochenplan ..."
   );
+  const { user } = useAuthContext();
 
   // Get MedTasks Data from Mongo DB
   useEffect(() => {
     const fetchMedTasksData = async () => {
-      const response = await fetch(myURL);
+      const response = await fetch(myURL, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -32,10 +37,12 @@ function Adminpage() {
       }
     };
 
-    fetchMedTasksData();
-    setPostSend(false);
-    setMedDataIsPending(false);
-  }, [postSend]);
+    if (user) {
+      fetchMedTasksData();
+      setPostSend(false);
+      setMedDataIsPending(false);
+    }
+  }, [postSend, user]);
 
   // Update Data in Mongo DB
 
