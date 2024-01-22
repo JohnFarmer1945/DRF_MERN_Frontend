@@ -29,7 +29,7 @@ const Signup = () => {
             value={email}
           />
           <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+            “When I left you, I was but the learner. Now I am the master.”
           </div>
         </div>
         <div className="m-5 ">

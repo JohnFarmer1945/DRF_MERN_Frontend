@@ -80,7 +80,6 @@ function Adminpage() {
     <>
       <div className="card shadow">
         <div className="card-body">
-          {medDataIsPending && medDataIsPending}
           <table className="table table-hover table-striped table-sm w-auto align-top">
             <thead>
               <tr>
@@ -93,6 +92,7 @@ function Adminpage() {
                 </th>
               </tr>
             </thead>
+            {medDataIsPending && medDataIsPending}
             <tbody>
               <tr></tr>
 
