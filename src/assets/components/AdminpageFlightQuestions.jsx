@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useAuthContext } from "../hooks/useAuthContext";
 import SingleFlightQuestionTableLine from "./SingleFlightQuestionTableLine";
 
 let myURL = "";
@@ -19,10 +19,16 @@ function Adminpage() {
     "Loading flight Questions..."
   );
 
+  const { user } = useAuthContext();
+
   // Get Whiteboard Data:
   useEffect(() => {
     const fetchFlightQuestionsData = async () => {
-      const response = await fetch(myURL);
+      const response = await fetch(myURL, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -32,9 +38,11 @@ function Adminpage() {
       }
     };
 
-    fetchFlightQuestionsData();
-    setPostSend(false);
-  }, [postSend]);
+    if (user) {
+      fetchFlightQuestionsData();
+      setPostSend(false);
+    }
+  }, [postSend, user]);
 
   // Create Entry Fetch
   const handleAdd = async () => {
