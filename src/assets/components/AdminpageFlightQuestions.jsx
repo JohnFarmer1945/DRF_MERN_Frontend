@@ -58,6 +58,7 @@ function Adminpage() {
       body: JSON.stringify(newEntry),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
     });
 

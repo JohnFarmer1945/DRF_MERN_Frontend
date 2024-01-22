@@ -1,6 +1,7 @@
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { useAuthContext } from "./assets/hooks/useAuthContext";
 
 // Layouts
 
@@ -32,6 +33,8 @@ import Login from "./assets/components/Login";
 import NotFound from "./assets/components/NotFound";
 
 function App() {
+  const { user } = useAuthContext();
+
   return (
     <>
       <Routes>
@@ -56,8 +59,8 @@ function App() {
           />
         </Route>
 
-        <Route path="adminpage" element={<AdminLayout />}>
-          <Route exact path="" />
+        <Route path="adminpage" element={user ? <AdminLayout /> : <Login />}>
+          <Route exact path="" element={<AdminpageWhiteBoard />} />
           <Route exact path="Whiteboard" element={<AdminpageWhiteBoard />} />
           <Route
             exact
@@ -73,8 +76,8 @@ function App() {
         </Route>
 
         <Route>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={user ? <AdminLayout /> : <Signup />} />
+          <Route path="/login" element={user ? <AdminLayout /> : <Login />} />
         </Route>
 
         <Route>

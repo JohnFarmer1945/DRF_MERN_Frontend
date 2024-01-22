@@ -35,6 +35,11 @@ function Navbar() {
                 Adminpage
               </NavLink>
             </li>
+            <li className="nav-item adminpage">
+              <NavLink className="nav-link" to="/">
+                Startpage
+              </NavLink>
+            </li>
           </ul>
           <ul className="navbar-nav d-flex justify-content-end">
             <li className="nav-item">

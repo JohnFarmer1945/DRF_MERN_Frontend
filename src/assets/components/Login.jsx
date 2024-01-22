@@ -44,6 +44,11 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
+            <div id="passwordHelp" className="form-text">
+              <div id="emailHelp" className="form-text">
+                “I am the Senate.”
+              </div>
+            </div>
           </div>
 
           <button

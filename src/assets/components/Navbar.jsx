@@ -74,17 +74,24 @@ function Navbar() {
         >
           <ul className="navbar-nav d-flex ms-auto ">
             {user && (
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  {/* <span>{user.email} | </span> */}
-                  <i
-                    className="bi bi-box-arrow-right"
-                    onClick={handleLockoutClick}
-                  >
-                    Logout
-                  </i>
-                </NavLink>
-              </li>
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/adminpage">
+                    Adminpage
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/">
+                    {/* <span>{user.email} | </span> */}
+                    <i
+                      className="bi bi-box-arrow-right"
+                      onClick={handleLockoutClick}
+                    >
+                      Logout
+                    </i>
+                  </NavLink>
+                </li>
+              </>
             )}
             {!user && (
               <li className="nav-item">
