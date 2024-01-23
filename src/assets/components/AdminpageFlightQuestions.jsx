@@ -26,6 +26,7 @@ function Adminpage() {
     const fetchFlightQuestionsData = async () => {
       const response = await fetch(myURL, {
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,
         },
       });
@@ -82,6 +83,10 @@ function Adminpage() {
 
     const response = await fetch(myURL + data, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
     });
 
     const json = await response.json();
@@ -113,6 +118,7 @@ function Adminpage() {
       body: JSON.stringify(entryToUpdate),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
     });
 
