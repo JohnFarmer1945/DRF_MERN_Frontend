@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import SingleFlightQuestionTableLine from "./SingleFlightQuestionTableLine";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
@@ -130,10 +132,11 @@ function Adminpage() {
     if (response.ok) {
       setError(null);
       console.log("Entry updated!", json);
+      notify();
     }
     setPostSend(true);
   };
-
+  const notify = () => toast.success("Eintrag aktualisiert!");
   return (
     <>
       <div className="card shadow">
@@ -199,6 +202,7 @@ function Adminpage() {
           </table>
         </div>
       </div>
+      <ToastContainer autoClose={1200} />
     </>
   );
 }

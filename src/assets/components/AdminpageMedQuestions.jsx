@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import SingleMedQuestionTableLine from "./SingleMedQuestionTableLine";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 let myURL = "";
 if (import.meta.env.DEV === true) {
@@ -56,6 +58,7 @@ function Adminpage() {
       body: JSON.stringify(newEntry),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
     });
 
@@ -79,6 +82,10 @@ function Adminpage() {
 
     const response = await fetch(myURL + data, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
     });
 
     const json = await response.json();
@@ -110,6 +117,7 @@ function Adminpage() {
       body: JSON.stringify(entryToUpdate),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
     });
 
@@ -121,10 +129,11 @@ function Adminpage() {
     if (response.ok) {
       setError(null);
       console.log("Entry updated!", json);
+      notify();
     }
     setPostSend(true);
   };
-
+  const notify = () => toast.success("Eintrag aktualisiert!");
   return (
     <>
       <div className="card shadow">
@@ -189,6 +198,9 @@ function Adminpage() {
             </tfoot>
           </table>
         </div>
+      </div>
+      <div>
+        <ToastContainer autoClose={1200} />
       </div>
     </>
   );
