@@ -59,8 +59,7 @@ function App() {
           />
         </Route>
 
-        <Route path="adminpage" element={user ? <AdminLayout /> : <Login />}>
-          <Route exact path="" element={<AdminpageWhiteBoard />} />
+        <Route path="adminpage" element={<AdminLayout />}>
           <Route exact path="Whiteboard" element={<AdminpageWhiteBoard />} />
           <Route
             exact
@@ -76,8 +75,16 @@ function App() {
         </Route>
 
         <Route>
-          <Route path="/signup" element={user ? <AdminLayout /> : <Signup />} />
-          <Route path="/login" element={user ? <AdminLayout /> : <Login />} />
+          <Route
+            path="/signup"
+            element={
+              user ? <Navigate to="/adminpage/Whiteboard" /> : <Signup />
+            }
+          />
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/adminpage/Whiteboard" /> : <Login />}
+          />
         </Route>
 
         <Route>

@@ -76,19 +76,12 @@ function Navbar() {
             {user && (
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/adminpage">
-                    Adminpage
-                  </NavLink>
-                </li>
-                <li className="nav-item">
                   <NavLink className="nav-link" to="/">
                     {/* <span>{user.email} | </span> */}
                     <i
                       className="bi bi-box-arrow-right"
                       onClick={handleLockoutClick}
-                    >
-                      Logout
-                    </i>
+                    ></i>
                   </NavLink>
                 </li>
               </>
@@ -96,7 +89,7 @@ function Navbar() {
             {!user && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
-                  <i className="bi bi-box-arrow-in-left">Login</i>
+                  <i className="bi bi-box-arrow-in-left"></i>
                 </NavLink>
               </li>
             )}

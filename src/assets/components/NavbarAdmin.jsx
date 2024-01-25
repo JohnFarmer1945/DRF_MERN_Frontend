@@ -35,11 +35,6 @@ function Navbar() {
                 Adminpage
               </NavLink>
             </li>
-            <li className="nav-item adminpage">
-              <NavLink className="nav-link" to="/">
-                Startpage
-              </NavLink>
-            </li>
           </ul>
           <ul className="navbar-nav d-flex justify-content-end">
             <li className="nav-item">
@@ -77,6 +72,7 @@ function Navbar() {
                     className="bi bi-box-arrow-right"
                     onClick={handleLockoutClick}
                   >
+                    {" "}
                     Logout
                   </i>
                 </NavLink>
@@ -85,7 +81,7 @@ function Navbar() {
             {!user && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
-                  <i className="bi bi-box-arrow-in-left">Login</i>
+                  <i className="bi bi-box-arrow-in-left"></i>
                 </NavLink>
               </li>
             )}
