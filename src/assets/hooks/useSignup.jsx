@@ -5,7 +5,7 @@ let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "../api/user/signup";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-backend.onrender.com/api/user/signup";
+  myURL = "https://drf-crewbriefing-backend.netlify.app/api/user/signup";
 }
 
 export const useSignup = () => {

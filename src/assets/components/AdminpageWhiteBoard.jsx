@@ -8,7 +8,7 @@ let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "../api/whiteboard/";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-backend.onrender.com/api/whiteboard/";
+  myURL = "https://drf-crewbriefing-backend.netlify.app/api/whiteboard/";
 }
 
 function Adminpage() {
