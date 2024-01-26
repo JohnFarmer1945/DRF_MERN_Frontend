@@ -9,7 +9,7 @@ let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "../api/whiteboard";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-crewbriefing-backend.netlify.app/api/whiteboard";
+  myURL = "https://drf-mern-backend.vercel.app/api/whiteboard";
 }
 
 function Team() {
