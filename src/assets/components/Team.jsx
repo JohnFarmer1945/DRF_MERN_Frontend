@@ -9,7 +9,7 @@ let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "../api/whiteboard";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-mern-backend.vercel.app/api/whiteboard";
+  myURL = "https://drf-backend.onrender.com/api/whiteboard/";
 }
 
 function Team() {
