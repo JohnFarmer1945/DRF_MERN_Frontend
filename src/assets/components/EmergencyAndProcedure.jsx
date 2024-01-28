@@ -137,15 +137,14 @@ let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "../api/flightQuestions/random/";
 } else if (import.meta.env.PROD === true) {
-  myURL =
-    "https://drf-crewbriefing-backend.netlify.app/api/flightQuestions/random/";
+  myURL = "https://drf-backend.onrender.com/api/flightQuestions/random/";
 }
 
 let myURL1 = "";
 if (import.meta.env.DEV === true) {
   myURL1 = "../api/medQuestions/random";
 } else if (import.meta.env.PROD === true) {
-  myURL1 = "https://drf-crewbriefing-backend.netlify.app/api/medQuestions/";
+  myURL1 = "https://drf-backend.onrender.com/api/medQuestions/";
 }
 
 function EmergencyAndProcedure() {

@@ -8,7 +8,7 @@ let myURL = "";
 if (import.meta.env.DEV === true) {
   myURL = "../api/medQuestions/";
 } else if (import.meta.env.PROD === true) {
-  myURL = "https://drf-crewbriefing-backend.netlify.app/api/medQuestions/";
+  myURL = "https://drf-backend.onrender.com/api/medQuestions/";
 }
 
 function Adminpage() {
