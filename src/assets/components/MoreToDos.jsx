@@ -62,7 +62,7 @@ function AdminpageWeekTasks() {
 
   return (
     <>
-      <div className="container-fluid border rounded text-center p-0 ">
+      <div className="container-fluid border rounded text-center  p-0 ">
         <div className="card shadow ">
           <div className="card-body">
             <h2>Anstehende Flüge</h2>
@@ -71,19 +71,23 @@ function AdminpageWeekTasks() {
         </div>
 
         <div className="card shadow">
-          <div className="card-body">
-            <table className="table table-hover table-sm w-auto align-top">
-              <thead>
-                <tr className="table-active">
-                  <th scope="col"></th>
-                  <th scope="col">Schicht</th>
-                  <th scope="col">Flug</th>
-                  <th scope="col">Medizin</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>{DayTaskData ? DayTaskData : dayTaskDataIsPending}</tbody>
-            </table>
+          <div className="card-body container">
+            <div>
+              <table className="table table-hover table-sm w-auto align-top">
+                <thead>
+                  <tr className="table-active">
+                    <th scope="col"></th>
+                    <th scope="col">Schicht</th>
+                    <th scope="col">Flug</th>
+                    <th scope="col">Medizin</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DayTaskData ? DayTaskData : dayTaskDataIsPending}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

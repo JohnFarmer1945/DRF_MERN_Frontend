@@ -144,7 +144,7 @@ let myURL1 = "";
 if (import.meta.env.DEV === true) {
   myURL1 = "../api/medQuestions/random";
 } else if (import.meta.env.PROD === true) {
-  myURL1 = "https://drf-backend.onrender.com/api/medQuestions/";
+  myURL1 = "https://drf-backend.onrender.com/api/medQuestions/random";
 }
 
 function EmergencyAndProcedure() {
