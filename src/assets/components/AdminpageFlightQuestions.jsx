@@ -73,6 +73,7 @@ function Adminpage() {
     if (response.ok) {
       setError(null);
       console.log("new question added", json);
+      toastSuccNew();
     }
     setPostSend(true);
   };
@@ -99,6 +100,7 @@ function Adminpage() {
     if (response.ok) {
       setError(null);
       console.log("Entry deleted", json);
+      toastSuccDeleted();
     }
     setPostSend(true);
   };
@@ -132,11 +134,16 @@ function Adminpage() {
     if (response.ok) {
       setError(null);
       console.log("Entry updated!", json);
-      notify();
+      toastSuccUpdated();
     }
     setPostSend(true);
   };
-  const notify = () => toast.success("Eintrag aktualisiert!");
+
+  // Toastify Messages sucess
+  const toastSuccUpdated = () => toast.success("Eintrag aktualisiert!");
+  const toastSuccDeleted = () => toast.success("Eintrag gelöscht!");
+  const toastSuccNew = () => toast.success("Neuer Eintrag!");
+
   return (
     <>
       <div className="card shadow">

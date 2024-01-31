@@ -69,11 +69,14 @@ function Adminpage() {
     if (response.ok) {
       setError(null);
       console.log("Entry updated!", json);
-      notify();
+      toastSuccUpdated();
     }
     setPostSend(true);
   };
-  const notify = () => toast.success("Eintrag aktualisiert!");
+
+  // Toastify Messages sucess
+  const toastSuccUpdated = () => toast.success("Eintrag aktualisiert!");
+
   return (
     <>
       <div className="card shadow">
