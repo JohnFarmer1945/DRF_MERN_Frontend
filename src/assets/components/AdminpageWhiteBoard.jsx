@@ -175,8 +175,8 @@ function Adminpage() {
                 <td>
                   <input
                     type="text"
-                    size="12"
-                    maxLength="12"
+                    size="30"
+                    maxLength="30"
                     onChange={(e) => setNewTitle(e.target.value)}
                     value={newTitle}
                   ></input>
@@ -184,8 +184,8 @@ function Adminpage() {
                 <td>
                   <input
                     type="text"
-                    size="40"
-                    maxLength="40"
+                    size="30"
+                    maxLength="30"
                     onChange={(e) => setNewDescription(e.target.value)}
                     value={newDescription}
                   ></input>

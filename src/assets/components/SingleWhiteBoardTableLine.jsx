@@ -28,8 +28,8 @@ const SingleWhiteBoardTableLine = ({
       <td>
         <input
           type="text"
-          size="12"
-          maxLength="12"
+          size="30"
+          maxLength="30"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         ></input>
@@ -37,8 +37,8 @@ const SingleWhiteBoardTableLine = ({
       <td>
         <input
           type="text"
-          size="40"
-          maxLength="40"
+          size="30"
+          maxLength="30"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         ></input>

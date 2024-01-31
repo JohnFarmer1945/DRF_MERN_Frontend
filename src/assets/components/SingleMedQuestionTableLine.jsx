@@ -28,8 +28,8 @@ const SingleMedQuestionTableLine = ({
       <td>
         <input
           type="text"
-          size="12"
-          maxLength="12"
+          size="30"
+          maxLength="30"
           onChange={(e) => setQuestion(e.target.value)}
           value={question}
         ></input>
@@ -37,8 +37,8 @@ const SingleMedQuestionTableLine = ({
       <td>
         <input
           type="text"
-          size="40"
-          maxLength="40"
+          size="30"
+          maxLength="30"
           onChange={(e) => setAnswer(e.target.value)}
           value={answer}
         ></input>
