@@ -2,34 +2,34 @@ import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
 
 const Signup = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { signup, isLoading, error } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signup(email, password);
+    await signup(username, password);
   };
 
   return (
     <div className="container-fluid border rounded text-center p-5 ">
       <form className="border p-3" onSubmit={handleSubmit}>
-        <h3 className="text-decoration-underline">Signup</h3>
+        <h3 className="text-decoration-underline">Create a new User:</h3>
         <div className="m-5">
           <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
+            Username
           </label>
           <input
-            type="email"
+            type="text"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
           />
           <div id="emailHelp" className="form-text">
-            “When I left you, I was but the learner. Now I am the master.”
+            Please enter a new username.
           </div>
         </div>
         <div className="m-5 ">
@@ -43,10 +43,13 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
+          <div id="emailHelp" className="form-text">
+            Please enter your new password.
+          </div>
         </div>
 
         <button disabled={isLoading} type="submit" className="btn btn-primary">
-          Sign up
+          Create new user.
         </button>
         {error && <div className="error">{error}</div>}
       </form>

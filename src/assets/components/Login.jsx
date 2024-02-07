@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await login(email, password);
+    await login(username, password);
   };
 
   return (
@@ -19,19 +19,17 @@ const Login = () => {
           <h3 className="text-decoration-underline">Login</h3>
           <div className="m-5">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
+              Username
             </label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
             />
-            <div id="emailHelp" className="form-text">
-              “When I left you, I was but the learner. Now I am the master.”
-            </div>
+            <div id="emailHelp" className="form-text"></div>
           </div>
           <div className="m-5 ">
             <label htmlFor="exampleInputPassword1" className="form-label">
@@ -46,7 +44,7 @@ const Login = () => {
             />
             <div id="passwordHelp" className="form-text">
               <div id="emailHelp" className="form-text">
-                “I am the Senate.”
+                Please pay attention to uppercase and lowercase letters.
               </div>
             </div>
           </div>
