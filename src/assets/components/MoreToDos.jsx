@@ -62,7 +62,7 @@ function AdminpageWeekTasks() {
 
   return (
     <>
-      <div className="container-fluid border rounded text-center  p-0 ">
+      <div className="container-fluid border rounded text-center p-0 ">
         <div className="card shadow ">
           <div className="card-body">
             <h2>Anstehende Flüge</h2>
@@ -70,10 +70,10 @@ function AdminpageWeekTasks() {
           </div>
         </div>
 
-        <div className="card shadow">
-          <div className="card-body container">
-            <div>
-              <table className="table table-hover table-sm w-auto align-top">
+        <div className="card shadow ">
+          <div className="card-body">
+            <div className="d-flex justify-content-center">
+              <table className="table table-hover w-auto align-top">
                 <thead>
                   <tr className="table-active">
                     <th scope="col"></th>
